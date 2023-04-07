@@ -1,0 +1,15 @@
+require: 
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-capybara
+
+AllCops:
+  NewCops: enable
+  Exclude: 
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'vendor/bundle/**/*'
+    - 'lib/tasks/fly.rake'
+
+Style/Documentation:
+  Enabled: false
