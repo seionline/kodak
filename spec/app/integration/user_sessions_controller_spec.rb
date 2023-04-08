@@ -2,32 +2,41 @@
 
 require 'rails_helper'
 
-RSpec.describe 'UserSessionsController', skip: 'these need to be fixed and make rspec-y', type: :request do
+RSpec.describe 'UserSessionsController', type: :request do
   fixtures :users
+
+  let(:user) { users(:user) }
 
   it 'gets new' do
     get new_user_session_url
-    assert_response :success
+    expect(response).to have_http_status(:success)
   end
 
-  it 'logs user in successfully' do
-    post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
-    expect(:user.id).to eq(session[:current_user_id])
-    assert_redirected_to root_url
+  context 'when user is logged in successfully' do
+    before do
+      post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
+    end
+
+    it { expect(session[:current_user_id]).to eq(user.id) }
+    it { expect(response).to redirect_to(home_url) }
   end
 
-  it 'fails to log in user' do
-    post user_session_url, params: { user_session: { email: 'user', password: 'wrong_password' } }
-    assert_nil session[:current_user_id]
-    assert_response :unprocessable_entity
+  context 'when user log in fails' do
+    before do
+      post user_session_url, params: { user_session: { email: user.email, password: 'wrong_password' } }
+    end
+
+    it { expect(session[:current_user_id]).to be_nil }
+    it { expect(response).to have_http_status(:unprocessable_entity) }
   end
 
-  it 'logs out user' do
-    post user_session_url, params: { user_session: { email: 'user', password: 'user_password' } }
-    assert_redirected_to root_url
+  context 'when logging out' do
+    before do
+      post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
+      delete user_session_url
+    end
 
-    delete user_session_url
-    assert_nil session[:current_user_id]
-    assert_redirected_to root_url
+    it { expect(session[:current_user_id]).to be_nil }
+    it { expect(response).to redirect_to(home_url) }
   end
 end

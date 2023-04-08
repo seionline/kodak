@@ -12,7 +12,8 @@ User.create!(
   first_name: 'Hana',
   last_name: 'Harencarova',
   email: 'h@seionline.ch',
-  password_digest: 'aaa',
+  password: 'aaa',
+  password_confirmation: 'aaa',
   role: :admin
 )
 
@@ -22,7 +23,8 @@ User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    password_digest: 'aaa',
+    password: 'aaa',
+    password_confirmation: 'aaa',
     role: :staff
   )
 end
@@ -36,7 +38,8 @@ cities = %w[Bratislava Nitra Košice Trnava Pezinok Budmerice Żilina Skalka Tre
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    password_digest: 'aaa',
+    password: 'aaa',
+    password_confirmation: 'aaa',
     phone: Faker::PhoneNumber.cell_phone_in_e164,
     street: "#{streets.sample} #{rand(1..333)}",
     city: cities.sample,

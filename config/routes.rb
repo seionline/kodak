@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get 'log_in', to: redirect('/user_session/new')
   get 'sign_up', to: redirect('/users/new')
   delete 'log_out', to: 'user_sessions#destroy'
+
+  get 'home', to: redirect('/')
 end
