@@ -6,15 +6,13 @@ RSpec.describe 'UserSessionsController', type: :request do
   fixtures :users
 
   it 'should get new' do
-    debug
     get new_user_session_url
     assert_response :success
   end
 
-  # describe 'POST - /u'
   it 'should log user in successfully' do
-    post user_session_url, params: { user_session: { email: 'user', password: 'user_password' } }
-    assert_equal users(:user).id, session[:current_user_id]
+    post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
+    assert_equal :user.id, session[:current_user_id]
     assert_redirected_to root_url
   end
 
