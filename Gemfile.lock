@@ -129,6 +129,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.14.2-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     parallel (1.22.1)
@@ -208,6 +210,10 @@ GEM
       parser (>= 3.2.1.0)
     rubocop-capybara (2.17.1)
       rubocop (~> 1.41)
+    rubocop-rails (2.19.0)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
     rubocop-rspec (2.19.0)
       rubocop (~> 1.33)
       rubocop-capybara (~> 2.17)
@@ -225,6 +231,8 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.27-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.27-x86_64-darwin)
       railties (>= 6.0.0)
@@ -255,6 +263,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-darwin-21
 
 DEPENDENCIES
@@ -270,6 +279,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   rspec-rails (~> 6.0)
   rubocop (~> 1.48)
+  rubocop-rails (~> 2.19)
   rubocop-rspec (~> 2.19)
   selenium-webdriver
   sprockets-rails
@@ -281,7 +291,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.8
