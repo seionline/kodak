@@ -72,7 +72,11 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    brakeman (5.4.1)
     builder (3.2.4)
+    bundler-audit (0.9.1)
+      bundler (>= 1.2.0, < 3)
+      thor (~> 1.0)
     capybara (3.39.0)
       addressable
       matrix
@@ -132,6 +136,8 @@ GEM
     nokogiri (1.14.2-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
     parser (3.2.2.0)
@@ -236,6 +242,8 @@ GEM
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.27-x86_64-darwin)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.27-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -265,9 +273,12 @@ GEM
 PLATFORMS
   arm64-darwin-22
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
+  brakeman (~> 5.4, >= 5.4.1)
+  bundler-audit (~> 0.9.1)
   capybara
   debug
   error_highlight (>= 0.4.0)
