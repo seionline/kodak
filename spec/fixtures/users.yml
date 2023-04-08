@@ -1,0 +1,19 @@
+user:
+  first_name: 'Astrid'
+  last_name: 'Lindgren'
+  email: user@example.com
+  password_digest: '$2a$12$iPhbtfcPCNC83zIX.b2NCOIzbqxVn1RVZ0veCgkTvQW9I15sbMoGq' # 'user_password'
+
+user_with_unconfirmed_email:
+  first_name: 'Alan'
+  last_name: 'Poe'
+  email: user_with_unconfirmed_email@example.com
+  password_digest: '$2a$12$vRjhDepgOznqFBurr2Jp8.N1Zcm/rhpOVM02W2KAtDFSNEQmOKqli' # 'mypassword'
+  email_confirmation_token: 'iYQ6tXWC53k4bfQRo6u9'
+
+user_with_open_password_reset_request:
+  first_name: 'Ella'
+  last_name: 'Fitzgerald'
+  email: user_with_open_password_reset_request@example.com
+  password_digest: '$2a$12$vRjhDepgOznqFBurr2Jp8.N1Zcm/rhpOVM02W2KAtDFSNEQmOKqli' # 'mypassword'
+  password_reset_token: 'Tm8Gv9VP4XsHnIJyosk7'
