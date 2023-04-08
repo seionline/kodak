@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, confirmation: true
   validates :first_name, :last_name, :email, :role, :password_digest, presence: true
 
-  attr_accessor :first_name, :last_name, :email, :email_confirmation
+  attr_accessor :email_confirmation
 
   def name
     [first_name, last_name].compact.join(' ')
