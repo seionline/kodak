@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module User
+module Auth
   class PasswordResetsController < ApplicationController
     def new
       @password_reset = User::PasswordReset.new(password_reset_params)
@@ -11,9 +11,9 @@ module User
 
       if user&.update(user_password_params) && user&.update(password_reset_token: nil)
         # TODO: Should we inform the user by email that their password has been changed, in case it wasn't them?
-        redirect_to :home, notice: I18n.t('password_resets.create.success_notice')
+        redirect_to :home, notice: I18n.t('auth.password_resets.create.success_notice')
       else
-        redirect_to :home, alert: I18n.t('password_resets.create.failure_alert')
+        redirect_to :home, alert: I18n.t('auth.password_resets.create.failure_alert')
       end
     end
 

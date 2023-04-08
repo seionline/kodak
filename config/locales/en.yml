@@ -1,16 +1,24 @@
 en:
-  email_confirmations:
-    create:
-      success_notice: Successfully confirmed your email address.
-      failure_alert: Couldn't confirm your email address.
-    resend:
-      success_notice: Please click the confirmation link in the email you will receive momentarily.
-      failure_alert: Couldn't send confirmation email. Please try again later.
-  password_reset_requests:
-    create:
-      success_notice: Please click the password reset link in the email you will receive momentarily.
-  password_resets:
-    create:
-      success_notice: Successfully changed your password.
-      failure_alert: Couldn't update your password.
-
+  auth:
+    sessions:
+      new:
+        title: Log in
+        error_message: "Couldn't log you in: Wrong email/password combination."
+        forgotten_password_message: Did you forget your password?
+        reset_password: Reset password
+        submit: Log in
+        submit_disable_with: Logging in...
+    email_confirmations:
+      create:
+        success_notice: Successfully confirmed your email address.
+        failure_alert: Couldn't confirm your email address.
+      resend:
+        success_notice: Please click the confirmation link in the email you will receive momentarily.
+        failure_alert: Couldn't send confirmation email. Please try again later.
+    password_reset_requests:
+      create:
+        success_notice: Please click the password reset link in the email you will receive momentarily.
+    password_resets:
+      create:
+        success_notice: Successfully changed your password.
+        failure_alert: Couldn't update your password.

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module User
+module Auth
   class PasswordResetRequestsController < ApplicationController
     def new
       @password_reset_request = User::PasswordResetRequest.new
@@ -12,7 +12,7 @@ module User
 
       user&.start_password_reset
 
-      redirect_to :home, notice: I18n.t('password_reset_requests.create.success_notice')
+      redirect_to :home, notice: I18n.t('auth.password_reset_requests.create.success_notice')
     end
 
     private

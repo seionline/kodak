@@ -2,19 +2,19 @@
 
 require 'rails_helper'
 
-RSpec.describe 'UserSessionsController', type: :request do
+RSpec.describe 'Auth::UserSessionsController', type: :request do
   fixtures :users
 
   let(:user) { users(:user) }
 
   it 'gets new' do
-    get new_user_session_url
+    get new_auth_session_url
     expect(response).to have_http_status(:success)
   end
 
   context 'when user is logged in successfully' do
     before do
-      post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
+      post auth_session_url, params: { auth_session: { email: user.email, password: 'user_password' } }
     end
 
     it { expect(session[:current_user_id]).to eq(user.id) }
@@ -23,7 +23,7 @@ RSpec.describe 'UserSessionsController', type: :request do
 
   context 'when user log in fails' do
     before do
-      post user_session_url, params: { user_session: { email: user.email, password: 'wrong_password' } }
+      post auth_session_url, params: { auth_session: { email: user.email, password: 'wrong_password' } }
     end
 
     it { expect(session[:current_user_id]).to be_nil }
@@ -32,8 +32,8 @@ RSpec.describe 'UserSessionsController', type: :request do
 
   context 'when logging out' do
     before do
-      post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
-      delete user_session_url
+      post auth_session_url, params: { auth_session: { email: user.email, password: 'user_password' } }
+      delete auth_session_url
     end
 
     it { expect(session[:current_user_id]).to be_nil }
