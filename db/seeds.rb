@@ -1,13 +1,5 @@
 # frozen_string_literal: true
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 User.create!(
   first_name: 'Hana',
   last_name: 'Harencarova',
@@ -46,3 +38,34 @@ cities = %w[Bratislava Nitra Košice Trnava Pezinok Budmerice Żilina Skalka Tre
     postcode: rand(11_000..99_876)
   )
 end
+
+# Create locations
+Location.create!(
+  name: 'Kodak Express - CENTRAL',
+  email: 'central@kodak.sk',
+  phone: '+421 2 5556 9096',
+  street: 'Metodova 6',
+  city: 'Bratislava',
+  postcode: '821 08',
+  opening_hours: '10:00 - 21:00',
+  description: {
+    en: 'Floor -1, opposite to the drug store TETA, next to the optics.',
+    sk: 'Na -1 poschodí, oproti Drogérii TETA, vedľa optiky.'
+  }
+)
+
+Location.create!(
+  name: 'Kodak Express - VIVO!',
+  email: 'vivo@kodak.sk',
+  phone: '+421 905 714 462',
+  street: 'Vajnorská ulica 100',
+  city: 'Bratislava',
+  postcode: '831 04',
+  opening_hours: '10:00 - 21:00',
+  description: {
+    en: 'In the main hall of main entrance: on the right side of stand Minit (if you are coming from a parking lot: \
+    on the left side of fresh juices - Frutisimo).',
+    sk: 'Vo vstupnej rotunde hlavného vchodu: na pravej strane od stánku Minit (pri príchode z garáže: naľavo od \
+    čerstvých štiav - Frutisimo).'
+  }
+)

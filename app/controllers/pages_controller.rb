@@ -2,6 +2,4 @@
 
 class PagesController < ApplicationController
   def index; end
-
-  def stores; end
 end

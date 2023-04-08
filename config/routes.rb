@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resource :session, only: %i[new create destroy]
   end
 
+  resources :locations, only: %i[index]
+
   get 'log_in', to: redirect('/auth/session/new')
   get 'sign_up', to: redirect('/users/new')
   delete 'log_out', to: 'auth/sessions#destroy'

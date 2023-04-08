@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_080433) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_08_200821) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "phone", null: false
+    t.string "street", null: false
+    t.string "city", null: false
+    t.string "postcode", null: false
+    t.string "opening_hours"
+    t.hstore "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
@@ -30,4 +44,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_080433) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
+
 end
