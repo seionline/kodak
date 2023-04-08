@@ -47,7 +47,7 @@ jobs:
       - name: Run RSpec
         run: | 
           bundle exec rails assets:precompile
-          COVERAGE=true bundle exec rspec
+          COVERAGE=true bin/rspec
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres

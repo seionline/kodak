@@ -2,29 +2,27 @@
 
 require 'rails_helper'
 
-# TODO: these need to be fixed and make rspec-y
-
-RSpec.describe 'UserSessionsController', type: :request, skip: true do
+RSpec.describe 'UserSessionsController', skip: 'these need to be fixed and make rspec-y', type: :request do
   fixtures :users
 
-  it 'should get new' do
+  it 'gets new' do
     get new_user_session_url
     assert_response :success
   end
 
-  it 'should log user in successfully' do
+  it 'logs user in successfully' do
     post user_session_url, params: { user_session: { email: user.email, password: 'user_password' } }
-    assert_equal :user.id, session[:current_user_id]
+    expect(:user.id).to eq(session[:current_user_id])
     assert_redirected_to root_url
   end
 
-  it 'should fail to log in user' do
+  it 'fails to log in user' do
     post user_session_url, params: { user_session: { email: 'user', password: 'wrong_password' } }
     assert_nil session[:current_user_id]
     assert_response :unprocessable_entity
   end
 
-  it 'should log out user' do
+  it 'logs out user' do
     post user_session_url, params: { user_session: { email: 'user', password: 'user_password' } }
     assert_redirected_to root_url
 

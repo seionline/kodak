@@ -8,7 +8,7 @@ RSpec.describe User do
 
   describe '#name' do
     it 'returns full name' do
-      expect(user.name).to eq('Astrid Lindgren') 
+      expect(user.name).to eq('Astrid Lindgren')
     end
   end
 end
