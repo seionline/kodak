@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.1'
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
@@ -52,11 +52,13 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'brakeman', '~> 5.4', '>= 5.4.1'
+  gem 'bundler-audit', '~> 0.9.1'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker', '~> 3.1', '>= 3.1.1'
   gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', '~> 1.48'
+  gem 'rubocop-rails', '~> 2.19'
   gem 'rubocop-rspec', '~> 2.19'
   gem 'simplecov', '~> 0.12.0'
 end
