@@ -1,4 +1,4 @@
-<h1><%= t('activerecord.models.location.other') %></h1>
+<h1><%= t('activerecord.models.location', count: Location.count) %></h1>
 
 <% @locations.each do |location| %>
   <h2><%= location.name %></h2>

@@ -4,9 +4,11 @@ sk:
     models:
       user: 
         one: Používateľ
+        few: Používatelia
         other: Používatelia
       location: 
         one: Prevádzka
+        few: Prevádzky
         other: Prevádzky
     attributes:
       location:

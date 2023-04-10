@@ -2,6 +2,14 @@ en:
   title: Kodak Express Bratislava
 
   activerecord:
+    models:
+      user:
+        one: User
+        other: Users
+      location:
+        one: Location
+        other: Locations
+
     attributes:
       location:
         address: Address

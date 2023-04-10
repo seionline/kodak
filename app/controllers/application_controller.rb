@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_locale
-    I18n.locale = params[:locale] || 'sk'
+    I18n.locale = params[:locale]
   end
 end

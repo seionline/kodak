@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/, defaults: { locale: 'sk' } do
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/, defaults: { locale: I18n.default_locale } do
     # Defines the root path route ("/")
     root 'pages#index'
 
