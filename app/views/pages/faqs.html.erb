@@ -1,0 +1,17 @@
+<h1><%= t('navigation.faqs') %></h1>
+
+<h2><%= t('faqs.real_sizes.title') %></h2>
+<p><strong><%= t('faqs.real_sizes.question') %></strong></p>
+<p><%= t('faqs.real_sizes.answer') %></p>
+
+<h2><%= t('faqs.resolution.title') %></h2>
+<p><strong><%= t('faqs.resolution.question') %></strong></p>
+<p><%= t('faqs.resolution.answer') %></p>
+
+<h2><%= t('faqs.prices.title') %></h2>
+<p><strong><%= t('faqs.prices.question') %></strong></p>
+<p><%= t('faqs.prices.answer') %></p>
+
+<hr>
+
+<p><%= t('faqs.footer.prompt_html', email_link: link_to(t('faqs.footer.email'), "mailto:#{@email}").html_safe) %></p>

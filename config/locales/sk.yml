@@ -20,6 +20,23 @@ sk:
         phone: Telefón
         opening_hours: Otváracie hodiny
 
+  faqs:
+    real_sizes:
+      title: Skutočné rozmery
+      question: Aké sú skutočné rozmery fotografií?
+      answer: 'Skutočné rozmery fotografií závisia od šírky role fotopapiera. Výrazy 9x13, 10x15,13x18, 15x21 atď. sú len názvy formátov, nie skutočné rozmery. Skutočné rozmery sú uvedené v nasledujúcej tabuľke:'
+    resolution:
+      title: Rozlíšenie
+      question: Aké minimálne rozlíšenie je treba, pre kvalitnú fotografiu?
+      answer: Kvalitná fotografia je veľmi subjektívny pojem. Nároky ľudí sú rôzne, napriek tomu sa dá povedať, že pre kvalitnú fotografiu je treba 300 dpi (300 bodov na 1 palec - 2,54 cm).
+    prices:
+      title: Ceny
+      question: Kde je cennik fotografií na počkanie?
+      answer: Fotografie na počkanie - 10 minút až cca 1 hodina (len v prípade veľkého počtu expresných zákaziek) robíme za rovnaké ceny ako Online objednávka do 2 hodín.
+    footer:
+      email: emailom
+      prompt_html: Ak máte otázky, neváhajte sa opýtať %{email_link}.
+
   location:
     days: Pondelok - Nedeľa
     description_title: Ako nás nájdete
@@ -27,7 +44,7 @@ sk:
   navigation:
     contact: Kontakt
     discounts: Akcie a zľavy
-    fag: Otázky a odpovede
+    faqs: Otázky a odpovede
     goods: Ponuka tovaru
     locations: Prevádzky
     online_order: Online objednávka
