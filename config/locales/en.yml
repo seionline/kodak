@@ -1,4 +1,14 @@
 en:
+  title: Kodak Express Bratislava
+  attributes:
+    location:
+      address: Address
+      days: Monday - Sunday
+      description: How to find us
+      email: Email
+      phone: Phone
+      locations: Locations
+      opening_hours: Opening hours
   auth:
     sessions:
       new:
@@ -22,12 +32,4 @@ en:
       create:
         success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
-  locations:
-    address: Address
-    days: Monday - Sunday
-    description: How to find us
-    description_key: en
-    email: Email
-    phone: Phone
-    locations: Locations
-    opening_hours: Opening hours
+

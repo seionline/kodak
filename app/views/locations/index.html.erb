@@ -1,15 +1,15 @@
-<h1><%= I18n.t 'locations.locations' %></h1>
+<h1><%= t('location.locations') %></h1>
 
 <% @locations.each do |location| %>
   <h2><%= location.name %></h2>
-  <p><%= I18n.t 'locations.opening_hours' %>: <%= I18n.t 'locations.days' %>: <%= location.opening_hours %></p>
+  <p><%= t('location.opening_hours') %>: <%= t('location.days') %>: <%= location.opening_hours %></p>
   <br>
-  <p><%= I18n.t 'locations.email' %>: <%= location.email %></p>
-  <p><%= I18n.t 'locations.phone' %>: <%= location.phone %></p>
+  <p><%= t('location.email') %>: <%= location.email %></p>
+  <p><%= t('location.phone') %>: <%= location.phone %></p>
   <br>
-  <p><%= I18n.t 'locations.address' %>:</p>
+  <p><%= t('location.address') %>:</p>
   <p><%= location.street %></p>
   <p><%= location.postcode %> <%=location.city %></p>
   <br>
-  <p><%= I18n.t 'locations.description' %>: <%=location.description[I18n.t 'locations.description_key'] %></p>
+  <p><%= t('location.description.title') %>: <%=location.description[I18n.locale.to_s] %></p>
 <% end %>
