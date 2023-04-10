@@ -13,12 +13,14 @@ en:
     attributes:
       location:
         address: Address
-        days: Monday - Sunday
-        description: How to find us
         email: Email
         phone: Phone
         locations: Locations
         opening_hours: Opening hours
+
+  location:
+    days: Monday - Sunday
+    description_title: How to find us
 
   auth:
     sessions:

@@ -1,5 +1,6 @@
 sk:
   title: Kodak Express Bratislava
+
   activerecord:
     models:
       user: 
@@ -18,6 +19,11 @@ sk:
         email: Email
         phone: Telefón
         opening_hours: Otváracie hodiny
+
+  location:
+    days: Pondelok - Nedeľa
+    description_title: Ako nás nájdete
+
   auth:
     sessions:
       new:
