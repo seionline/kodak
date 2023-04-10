@@ -22,6 +22,17 @@ en:
     days: Monday - Sunday
     description_title: How to find us
 
+  navigation:
+    contact: Contact
+    discounts: Discounts
+    fag: FAQs
+    goods: Goods
+    locations: Locations
+    online_order: Online order
+    pricelist: Pricelist
+    services: Services
+    suggestions: Your suggestions
+
   auth:
     sessions:
       new:
