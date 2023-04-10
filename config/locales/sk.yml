@@ -1,17 +1,21 @@
-en:
+sk:
   title: Kodak Express Bratislava
-
   activerecord:
+    models:
+      user: 
+        one: Používateľ
+        other: Používatelia
+      location: 
+        one: Prevádzka
+        other: Prevádzky
     attributes:
       location:
-        address: Address
-        days: Monday - Sunday
-        description: How to find us
+        address: Adresa
+        days: Pondelok - Nedeľa
+        description: Ako nás nájdete
         email: Email
-        phone: Phone
-        locations: Locations
-        opening_hours: Opening hours
-
+        phone: Telefón
+        opening_hours: Otváracie hodiny
   auth:
     sessions:
       new:
@@ -35,4 +39,3 @@ en:
       create:
         success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
-
