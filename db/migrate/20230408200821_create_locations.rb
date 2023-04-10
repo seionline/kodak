@@ -3,6 +3,7 @@
 class CreateLocations < ActiveRecord::Migration[7.0]
   enable_extension 'hstore' unless extension_enabled?('hstore')
 
+  # rubocop:disable Metrics/MethodLength
   def change
     create_table :locations do |t|
       t.string :name, null: false
@@ -17,4 +18,5 @@ class CreateLocations < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
