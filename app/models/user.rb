@@ -5,6 +5,8 @@ require 'securerandom'
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :orders, dependent: :nullify
+
   validates :email, uniqueness: true, confirmation: true
   validates :first_name, :last_name, :email, :role, :password_digest, presence: true
 
