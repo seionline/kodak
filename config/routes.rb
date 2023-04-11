@@ -3,23 +3,27 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  root 'pages#index'
+  scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/, defaults: { locale: I18n.default_locale } do
+    # Defines the root path route ("/")
+    root 'pages#index'
 
-  resources :users, only: %i[new create]
-  namespace :auth do
-    resources :email_confirmations, only: %i[new create]
-    namespace :email_confirmations do
-      post :resend
+    resources :users, only: %i[new create]
+    namespace :auth do
+      resources :email_confirmations, only: %i[new create]
+      namespace :email_confirmations do
+        post :resend
+      end
+      resources :password_reset_requests, only: %i[new create]
+      resources :password_resets, only: %i[new create]
+      resource :session, only: %i[new create destroy]
     end
-    resources :password_reset_requests, only: %i[new create]
-    resources :password_resets, only: %i[new create]
-    resource :session, only: %i[new create destroy]
+
+    resources :locations, only: %i[index]
+
+    get 'log_in', to: redirect('/auth/session/new')
+    get 'sign_up', to: redirect('/users/new')
+    delete 'log_out', to: 'auth/sessions#destroy'
+
+    get 'home', to: redirect('/')
   end
-
-  get 'log_in', to: redirect('/auth/session/new')
-  get 'sign_up', to: redirect('/users/new')
-  delete 'log_out', to: 'auth/sessions#destroy'
-
-  get 'home', to: redirect('/')
 end
