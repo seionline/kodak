@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Photo < ApplicationRecord
-  belongs_to :order_item
+  has_one :order, through: :order_item
+  has_many :order_items, dependent: :destroy
 end

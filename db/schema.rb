@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_200821) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_11_210719) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
@@ -24,6 +24,40 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_200821) do
     t.string "postcode", null: false
     t.string "opening_hours"
     t.hstore "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.string "size"
+    t.string "surface"
+    t.string "conversion"
+    t.boolean "white_frame", default: false, null: false
+    t.integer "amount"
+    t.integer "order_id"
+    t.integer "photo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "size"
+    t.string "surface"
+    t.string "conversion"
+    t.boolean "white_frame", default: false, null: false
+    t.integer "amount"
+    t.text "special_requests"
+    t.string "delivery_method"
+    t.string "payment_method"
+    t.string "status"
+    t.boolean "paid", default: false, null: false
+    t.integer "location_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
