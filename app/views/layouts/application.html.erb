@@ -45,6 +45,13 @@
             <li>
               <%= link_to t('navigation.contact'), locations_path, class: 'nav-item' %>
             </li>
+            <li>
+              <% if I18n.locale == 'sk' %>
+                <%= link_to t('navigation.english'), root_path, class: 'nav-item' %>
+              <% else %>
+                <%= link_to t('navigation.slovak'), root_path, class: 'nav-item' %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
