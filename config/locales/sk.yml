@@ -25,6 +25,8 @@ sk:
       title: Skutočné rozmery
       question: Aké sú skutočné rozmery fotografií?
       answer: 'Skutočné rozmery fotografií závisia od šírky role fotopapiera. Výrazy 9x13, 10x15,13x18, 15x21 atď. sú len názvy formátov, nie skutočné rozmery. Skutočné rozmery sú uvedené v nasledujúcej tabuľke:'
+      table_format_name: Názov formátu
+      table_format_size: Skutočný rozmer
     resolution:
       title: Rozlíšenie
       question: Aké minimálne rozlíšenie je treba, pre kvalitnú fotografiu?
