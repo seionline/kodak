@@ -22,6 +22,19 @@ en:
     days: Monday - Sunday
     description_title: How to find us
 
+  navigation:
+    contact: Contact
+    discounts: Discounts
+    english: EN
+    faq: FAQs
+    goods: Goods
+    locations: Locations
+    online_order: Online order
+    pricelist: Pricelist
+    services: Services
+    slovak: SK
+    suggestions: Your suggestions
+
   auth:
     sessions:
       new:

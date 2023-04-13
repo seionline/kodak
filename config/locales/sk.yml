@@ -24,6 +24,19 @@ sk:
     days: Pondelok - Nedeľa
     description_title: Ako nás nájdete
 
+  navigation:
+    contact: Kontakt
+    discounts: Akcie a zľavy
+    english: EN
+    faq: Otázky a odpovede
+    goods: Ponuka tovaru
+    locations: Prevádzky
+    online_order: Online objednávka
+    pricelist: Cenník
+    services: Služby
+    slovak: SK
+    suggestions: Vaše pripomienky
+
   auth:
     sessions:
       new:
