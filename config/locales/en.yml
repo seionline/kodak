@@ -18,7 +18,7 @@ en:
         locations: Locations
         opening_hours: Opening hours
 
-faqs:
+  faqs:
     real_sizes:
       title: Real dimensions
       question: What are the real dimensions of the photographs?
@@ -77,4 +77,3 @@ faqs:
       create:
         success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
-

@@ -46,10 +46,10 @@
               <%= link_to t('navigation.contact'), locations_path, class: 'nav-item' %>
             </li>
             <li>
-              <% if I18n.locale == 'sk' %>
-                <%= link_to t('navigation.english'), root_path, class: 'nav-item' %>
+              <% if I18n.locale == :sk %>
+                <%= link_to t('navigation.english'), root_path(locale: :en), class: 'nav-item' %>
               <% else %>
-                <%= link_to t('navigation.slovak'), root_path, class: 'nav-item' %>
+                <%= link_to t('navigation.slovak'), root_path(locale: :sk), class: 'nav-item' %>
               <% end %>
             </li>
           </ul>
