@@ -20,6 +20,25 @@ sk:
         phone: Telefón
         opening_hours: Otváracie hodiny
 
+  faqs:
+    real_sizes:
+      title: Skutočné rozmery
+      question: Aké sú skutočné rozmery fotografií?
+      answer: 'Skutočné rozmery fotografií závisia od šírky role fotopapiera. Výrazy 9x13, 10x15,13x18, 15x21 atď. sú len názvy formátov, nie skutočné rozmery. Skutočné rozmery sú uvedené v nasledujúcej tabuľke:'
+      table_format_name: Názov formátu
+      table_format_size: Skutočný rozmer
+    resolution:
+      title: Rozlíšenie
+      question: Aké minimálne rozlíšenie je treba, pre kvalitnú fotografiu?
+      answer: Kvalitná fotografia je veľmi subjektívny pojem. Nároky ľudí sú rôzne, napriek tomu sa dá povedať, že pre kvalitnú fotografiu je treba 300 dpi (300 bodov na 1 palec - 2,54 cm).
+    prices:
+      title: Ceny
+      question: Kde je cennik fotografií na počkanie?
+      answer: Fotografie na počkanie - 10 minút až cca 1 hodina (len v prípade veľkého počtu expresných zákaziek) robíme za rovnaké ceny ako Online objednávka do 2 hodín.
+    footer:
+      email: emailom
+      prompt_html: Ak máte otázky, neváhajte sa opýtať %{email_link}.
+
   location:
     days: Pondelok - Nedeľa
     description_title: Ako nás nájdete
@@ -40,23 +59,23 @@ sk:
   auth:
     sessions:
       new:
-        title: Log in
-        error_message: "Couldn't log you in: Wrong email/password combination."
-        forgotten_password_message: Did you forget your password?
-        reset_password: Reset password
-        submit: Log in
-        submit_disable_with: Logging in...
+        title: Prihlásenie
+        error_message: Prihlásenie nebolo možné. Nesprávana kombinácia emailu a hesla.
+        forgotten_password_message: Zabudli ste heslo?
+        reset_password: Reset hesla
+        submit: Prihlásiť sa
+        submit_disable_with: Prihlasujem
     email_confirmations:
       create:
-        success_notice: Successfully confirmed your email address.
-        failure_alert: Couldn't confirm your email address.
+        success_notice: Váš email bol potvrdený.
+        failure_alert: Váš email sa nepodarilo potvrdiť.
       resend:
-        success_notice: Please click the confirmation link in the email you will receive momentarily.
-        failure_alert: Couldn't send confirmation email. Please try again later.
+        success_notice: Prosím kliknite na potvrdzovací link v emaily, ktorý vám každú chvíľu príde.
+        failure_alert: Nepodarilo sa poslať email. Prosím skúste zachvíľu.
     password_reset_requests:
       create:
-        success_notice: Please click the password reset link in the email you will receive momentarily.
+        success_notice: Prosím kliknite na potvrdzovací link v emaily, ktorý vám každú chvíľu príde.
     password_resets:
       create:
-        success_notice: Successfully changed your password.
-        failure_alert: Couldn't update your password.
+        success_notice: Vaše heslo bolo úspešne zmenené.
+        failure_alert: Vaše heslo sa nepodarilo zmeniť.

@@ -18,6 +18,25 @@ en:
         locations: Locations
         opening_hours: Opening hours
 
+  faqs:
+    real_sizes:
+      title: Real dimensions
+      question: What are the real dimensions of the photographs?
+      answer: 'Actual photo dimensions depend on the width of the photo paper roll. Expressions 9x13, 10x15, 13x18, 15x21, etc. are just format names, not actual dimensions. The actual dimensions are shown in the table below:'
+      table_format_name: Name of the size
+      table_format_size: Real size
+    resolution:
+      title: Resolution
+      question: What is the minimal resolution needed for good quality photo?
+      answer: Quality photograph is a very subjective term. People's requirements are different, nevertheless it can be said that for a quality photo you need 300 dpi (300 dots per 1 inch - 2.54 cm).
+    prices:
+      title: Prices
+      question: Where is the price list of express photos printing?
+      answer: Express print - 10 minutes to approx. 1 hour (only in the case of a large number of express orders), is for the same prices as an online order within 2 hours.
+    footer:
+      email: email
+      prompt_html: If you have any questions don't hesitate to send us an %{email_link} to ask.
+
   location:
     days: Monday - Sunday
     description_title: How to find us
@@ -30,7 +49,7 @@ en:
     goods: Goods
     locations: Locations
     online_order: Online order
-    pricelist: Pricelist
+    pricelist: Price list
     services: Services
     slovak: SK
     suggestions: Your suggestions
@@ -58,4 +77,3 @@ en:
       create:
         success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
-
