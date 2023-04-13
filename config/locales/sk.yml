@@ -46,12 +46,14 @@ sk:
   navigation:
     contact: Kontakt
     discounts: Akcie a zľavy
-    faqs: Otázky a odpovede
+    english: EN
+    faq: Otázky a odpovede
     goods: Ponuka tovaru
     locations: Prevádzky
     online_order: Online objednávka
     pricelist: Cenník
     services: Služby
+    slovak: SK
     suggestions: Vaše pripomienky
 
   auth:

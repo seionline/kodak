@@ -44,12 +44,14 @@ faqs:
   navigation:
     contact: Contact
     discounts: Discounts
-    faqs: FAQs
+    english: EN
+    faq: FAQs
     goods: Goods
     locations: Locations
     online_order: Online order
     pricelist: Price list
     services: Services
+    slovak: SK
     suggestions: Your suggestions
 
   auth:
