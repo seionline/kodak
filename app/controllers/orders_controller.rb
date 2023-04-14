@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def edit
+    # TODO: authentication: check that this is actually the user's order (either authenticated user or user_id set in session)
+    @order = Order.find(params[:id])
+  end
+
   def create
     order = Order.build!(params[:order][:photos].reject(&:blank?))
     if order
@@ -20,12 +25,19 @@ class OrdersController < ApplicationController
     end
   end
 
-  def edit
-    # TODO: authentication: check that this is actually the user's order (either authenticated user or user_id set in session)
-    @order = Order.find(params[:id])
+  def update
+    order = Order.find(params[:id])
+
+    if order.update(order_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
-  def update
+  private
 
+  def order_params
+    params.require(:order).permit(:size)
   end
 end

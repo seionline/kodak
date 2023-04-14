@@ -1,4 +1,7 @@
 <%= form_with model: @order do |f| %>
-  <%= %>
+  <p>
+    <%= f.label :size %>
+    <%= f.select :size, Order::SIZES %>
+  </p>
   <%= f.submit %>
 <% end %>
