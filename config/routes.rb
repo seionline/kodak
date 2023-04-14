@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
 
     resources :locations, only: %i[index]
-    resources :orders, only: %i[new create]
+    resources :orders, only: %i[new create edit update]
 
     get 'log_in', to: redirect('/auth/session/new')
     get 'sign_up', to: redirect('/users/new')
