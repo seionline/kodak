@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join("|")}/, defaults: { locale: I18n.default_locale } do
     # Defines the root path route ("/")
     root 'pages#index'
+    get 'home', to: redirect('/')
+    get 'faqs', to: 'pages#faqs'
 
     resources :users, only: %i[new create]
     namespace :auth do
@@ -24,7 +26,5 @@ Rails.application.routes.draw do
     get 'log_in', to: redirect('/auth/session/new')
     get 'sign_up', to: redirect('/users/new')
     delete 'log_out', to: 'auth/sessions#destroy'
-
-    get 'home', to: redirect('/')
   end
 end
