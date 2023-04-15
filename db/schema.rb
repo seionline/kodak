@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_200821) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_15_051906) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
@@ -24,6 +24,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_200821) do
     t.string "postcode", null: false
     t.string "opening_hours"
     t.hstore "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photo_products", force: :cascade do |t|
+    t.string "name"
+    t.float "price1"
+    t.float "price2"
+    t.float "price3"
+    t.string "order_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.hstore "name", null: false
+    t.hstore "description"
+    t.float "price", null: false
+    t.string "product_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
