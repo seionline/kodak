@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     root 'pages#index'
     get 'home', to: redirect('/')
     get 'faqs', to: 'pages#faqs'
+    get 'products', to: 'pages#products'
+
 
     resources :users, only: %i[new create]
     namespace :auth do

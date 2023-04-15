@@ -48,13 +48,24 @@ sk:
     discounts: Akcie a zľavy
     english: EN
     faq: Otázky a odpovede
-    goods: Ponuka tovaru
+    products: Ponuka tovaru
     locations: Prevádzky
     online_order: Online objednávka
     pricelist: Cenník
     services: Služby
     slovak: SK
     suggestions: Vaše pripomienky
+
+  products:
+    films: Farebné aj čiernobiele fotografické filmy a jednorazové fotoaparáty
+    cameras: Digitálne aj klasické fotoaparáty a fotopríslušenstvo
+    cards: Pamäťové karty a čítačky pamäťových kariet, USB kľúče
+    batteries: Batérie, nabíjacie batérie a nabíjačky, gombíkové batérie
+    albums: Fotoalbumy a rámiky na fotografie, fotorožky a fotopodlepky
+    cleaning: Čistiace sady na objektívy, fólie na displeje, filtre
+    bags: Brašne, púzdra, statívy, dalekohľady
+    random: Fotopapiere, videokazety, CD a DVD médiá a iné záznamové médiá
+    presents: Rôzne darčekové predmety, prívesky na kľúče...
 
   auth:
     sessions:

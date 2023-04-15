@@ -6,4 +6,6 @@ class PagesController < ApplicationController
   def faqs
     @email = 'info@kodak.sk'
   end
+
+  def products; end
 end
