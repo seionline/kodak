@@ -69,3 +69,140 @@ Location.create!(
     čerstvých štiav - Frutisimo).'
   }
 )
+
+# Create Photo Products
+PhotoProduct.create(
+  name: '9x13',
+  price1: 0.33,
+  price2: 0.35,
+  price3: 0.37,
+  order_type: :online_order
+)
+
+PhotoProduct.create(
+  name: '10x15',
+  price1: 0.35,
+  price2: 0.37,
+  price3: 0.39,
+  order_type: :online_order
+)
+
+PhotoProduct.create(
+  name: '13x18',
+  price1: 0.57,
+  price2: 0.59,
+  price3: 0.65,
+  order_type: :online_order
+)
+
+PhotoProduct.create(
+  name: '9x13',
+  price1: 0.40,
+  price2: 0.43,
+  price3: 0.45,
+  order_type: :in_store_order
+)
+
+PhotoProduct.create(
+  name: '10x15',
+  price1: 0.50,
+  price2: 0.53,
+  price3: 0.55,
+  order_type: :in_store_order
+)
+
+PhotoProduct.create(
+  name: '13x18',
+  price1: 0.70,
+  price2: 0.73,
+  price3: 0.75,
+  order_type: :in_store_order
+)
+
+# Create Products
+Product.create(
+  name: {
+    en: 'Scanning of film up to 36 images',
+    sk: 'Skenovanie kinofilmu do 36 obr'
+  },
+  description: {
+    en: 'Scanning of film in high resolution',
+    sk: 'Skenovanie kinofilmu vo vysokom rozlíšení'
+  },
+  price: 6.9,
+  product_type: :scan
+)
+
+Product.create(
+  name: {
+    en: 'Color negative film',
+    sk: 'Farebný negatívny kinofilm'
+  },
+  description: {
+    en: 'Development of color negative cine film by process C41',
+    sk: 'Vyvolanie farebného negatívneho kinofilmu procesom C41'
+  },
+  price: 4.9,
+  product_type: :film_development
+)
+
+Product.create(
+  name: {
+    en: 'Color negative roll film',
+    sk: 'Farebný negatívny zvitkový film'
+  },
+  description: {
+    en: 'Development of color negative roll film by the C41 process',
+    sk: 'Vyvolanie farebného negatívneho zvitkového filmu procesom C41'
+  },
+  price: 6.9,
+  product_type: :film_development
+)
+
+Product.create(
+  name: {
+    en: 'Color negative roll film',
+    sk: 'Farebný negatívny zvitkový film'
+  },
+  description: {
+    en: 'Development of color negative roll film by the C41 process',
+    sk: 'Vyvolanie farebného negatívneho zvitkového filmu procesom C41'
+  },
+  price: 6.9,
+  product_type: :film_development
+)
+
+Product.create(
+  name: {
+    en: 'Puzzle A4',
+    sk: 'Puzzle A4'
+  },
+  description: {
+    en: '120/252 pieces',
+    sk: '120/252 dielikov'
+  },
+  price: 9.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Puzzle heart shape',
+    sk: 'Puzzle srdiečkové'
+  },
+  description: {
+    en: '73 pieces',
+    sk: '73 dielikov'
+  },
+  price: 9.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'T-shirt black/colored',
+    sk: 'Tričko čierne/farebné'
+  },
+  price: 14.9,
+  product_type: :presents
+)
