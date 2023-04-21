@@ -54,6 +54,20 @@ en:
     slovak: SK
     suggestions: Your suggestions
 
+  pricelist:
+    online_order: Ceny fotografií pre online objednávku
+    location_order: Fotografie z filmu
+    scan: Skenovanie - Digitalizácia
+    development: Vyvolávanie filmov
+    presents: Darčekové predmety
+    documents: Fotografie na preukazy, víza a iné doklady
+    real_sizes: Presné fyzické rozmery fotografií.
+    size: size
+    3days: 3 days
+    24hours: 24 hours
+    2hours: 2 hours
+    1hour: 1 hour
+
   products:
     films: Color and black and white photographic films and disposable cameras
     cameras: Digital and classic cameras and photo accessories

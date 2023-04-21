@@ -1,0 +1,48 @@
+<h1><%= t('navigation.pricelist') %></h1>
+
+<%= link_to(t('navigation.real_sizes'), faqs_path) %>
+<h2><%= t('pricelist.online_order') %></h2>
+<table>
+  <tr>
+    <th><%= t('pricelist.size') %></th>
+    <th><%= t('pricelist.3days') %></th>
+    <th><%= t('pricelist.24hours') %></th>
+    <th><%= t('pricelist.2hours') %></th>
+  </tr>
+  <% @photo_products_online.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= number_with_precision(product.price1, precision: 2) %>€</td>
+      <td><%= number_with_precision(product.price2, precision: 2) %>€</td>
+      <td><%= number_with_precision(product.price3, precision: 2) %>€</td>
+    </tr>
+  <% end %>
+</table> 
+
+<h2><%= t('pricelist.location_order') %></h2>
+<table>
+  <tr>
+    <th><%= t('pricelist.size') %></th>
+    <th><%= t('pricelist.3days') %></th>
+    <th><%= t('pricelist.24hours') %></th>
+    <th><%= t('pricelist.1hour') %></th>
+  </tr>
+  <% @photo_products_location.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= number_with_precision(product.price1, precision: 2) %>€</td>
+      <td><%= number_with_precision(product.price2, precision: 2) %>€</td>
+      <td><%= number_with_precision(product.price3, precision: 2) %>€</td>
+    </tr>
+  <% end %>
+</table> 
+
+<h2><%= t('pricelist.scan') %></h2>
+
+<h2><%= t('pricelist.development') %></h2>
+
+
+<h2><%= t('pricelist.presents') %></h2>
+
+
+<h2><%= t('pricelist.documents') %></h2>
