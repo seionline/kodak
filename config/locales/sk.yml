@@ -33,7 +33,7 @@ sk:
       answer: Kvalitná fotografia je veľmi subjektívny pojem. Nároky ľudí sú rôzne, napriek tomu sa dá povedať, že pre kvalitnú fotografiu je treba 300 dpi (300 bodov na 1 palec - 2,54 cm).
     prices:
       title: Ceny
-      question: Kde je cennik fotografií na počkanie?
+      question: Kde je cenník fotografií na počkanie?
       answer: Fotografie na počkanie - 10 minút až cca 1 hodina (len v prípade veľkého počtu expresných zákaziek) robíme za rovnaké ceny ako Online objednávka do 2 hodín.
     footer:
       email: emailom
@@ -48,13 +48,38 @@ sk:
     discounts: Akcie a zľavy
     english: EN
     faq: Otázky a odpovede
-    goods: Ponuka tovaru
+    products: Ponuka tovaru
     locations: Prevádzky
     online_order: Online objednávka
     pricelist: Cenník
     services: Služby
     slovak: SK
     suggestions: Vaše pripomienky
+
+  products:
+    films: Farebné aj čiernobiele fotografické filmy a jednorazové fotoaparáty
+    cameras: Digitálne aj klasické fotoaparáty a fotopríslušenstvo
+    cards: Pamäťové karty a čítačky pamäťových kariet, USB kľúče
+    batteries: Batérie, nabíjacie batérie a nabíjačky, gombíkové batérie
+    albums: Fotoalbumy a rámiky na fotografie, fotorožky a fotopodlepky
+    cleaning: Čistiace sady na objektívy, fólie na displeje, filtre
+    bags: Brašne, púzdra, statívy, dalekohľady
+    random: Fotopapiere, videokazety, CD a DVD médiá a iné záznamové médiá
+    presents: Rôzne darčekové predmety, prívesky na kľúče...
+
+  pricelist:
+    online_order: Ceny fotografií pre online objednávku
+    location_order: Fotografie z filmu
+    scan: Skenovanie - Digitalizácia
+    development: Vyvolávanie filmov
+    presents: Darčekové predmety
+    documents: Fotografie na preukazy, víza a iné doklady
+    real_sizes: Presné fyzické rozmery fotografií.
+    size: rozmer
+    3days: 3 dni
+    24hours: 24 hodín
+    2hours: 2 hodiny
+    1hour: 1 hodina
 
   auth:
     sessions:

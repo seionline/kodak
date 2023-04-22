@@ -46,7 +46,7 @@ en:
     discounts: Discounts
     english: EN
     faq: FAQs
-    goods: Goods
+    products: Products
     locations: Locations
     online_order: Online order
     pricelist: Price list
@@ -54,6 +54,31 @@ en:
     slovak: SK
     suggestions: Your suggestions
 
+  pricelist:
+    online_order: Ceny fotografií pre online objednávku
+    location_order: Fotografie z filmu
+    scan: Skenovanie - Digitalizácia
+    development: Vyvolávanie filmov
+    presents: Darčekové predmety
+    documents: Fotografie na preukazy, víza a iné doklady
+    real_sizes: Presné fyzické rozmery fotografií.
+    size: size
+    3days: 3 days
+    24hours: 24 hours
+    2hours: 2 hours
+    1hour: 1 hour
+
+  products:
+    films: Color and black and white photographic films and disposable cameras
+    cameras: Digital and classic cameras and photo accessories
+    cards: Memory cards and memory card readers, USB keys
+    batteries: Batteries, rechargeable batteries and chargers, button batteries
+    albums: Photo albums and photo frames, photo stickers and photo stickers
+    cleaning: Cleaning sets for lenses, foils for displays, filters
+    bags: Bags, cases, tripods, binoculars
+    random: Photo papers, video cassettes, CD and DVD media and other recording media
+    presents: Various gift items, key rings...
+      
   auth:
     sessions:
       new:
