@@ -47,9 +47,9 @@
             </li>
             <li>
               <% if I18n.locale == :sk %>
-                <%= link_to t('navigation.english'), root_path(locale: :en), class: 'nav-item' %>
+                <%= link_to t('navigation.english'), {locale: :en}, class: 'nav-item' %>
               <% else %>
-                <%= link_to t('navigation.slovak'), root_path(locale: :sk), class: 'nav-item' %>
+                <%= link_to t('navigation.slovak'), {locale: :sk}, class: 'nav-item' %>
               <% end %>
             </li>
           </ul>
