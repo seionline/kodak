@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.build!(params[:order][:photos].reject(&:blank?))
+    order = Order.build!(params[:order][:photos].compact_blank)
     if order
       session[:order_id] = order.id
       redirect_to edit_order_path(order)
