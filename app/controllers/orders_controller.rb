@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    # TODO: authentication: check that this is actually the user's order (either authenticated user or user_id set in session)
+    # TODO: authentication: check that this is actually the user's order
+    # (either authenticated user or user_id set in session)
     @order = Order.find(params[:id])
   end
 

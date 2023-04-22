@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CreateOrders < ActiveRecord::Migration[7.0]
-  def change
+  def change # rubocop:disable Metrics/MethodLength
     create_table :orders do |t|
       t.string :size
       t.string :surface
