@@ -22,7 +22,10 @@
         <div data-toggle-target="element" class="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-secondary-color">
             <li>
-              <%= link_to t('navigation.online_order'), root_path, class: 'nav-item' %>
+              <%= link_to t('navigation.home'), root_path, class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.online_order'), new_order_path, class: 'nav-item' %>
             </li>
             <li>
               <%= link_to t('navigation.services'), '#', class: 'nav-item' %>
@@ -47,9 +50,9 @@
             </li>
             <li>
               <% if I18n.locale == :sk %>
-                <%= link_to t('navigation.english'), {locale: :en}, class: 'nav-item' %>
+                <%= locale_link t('navigation.english'), :en %>
               <% else %>
-                <%= link_to t('navigation.slovak'), {locale: :sk}, class: 'nav-item' %>
+                <%= locale_link t('navigation.slovak'), :sk %>
               <% end %>
             </li>
           </ul>

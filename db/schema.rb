@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_15_051906) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_22_100135) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_15_051906) do
     t.string "surface"
     t.string "conversion"
     t.boolean "white_frame", default: false, null: false
-    t.integer "amount"
+    t.integer "amount", default: 1
     t.text "special_requests"
     t.string "delivery_method"
     t.string "payment_method"

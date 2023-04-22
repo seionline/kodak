@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     params_locale = params[:locale] if I18n.available_locales.include?(params[:locale]&.to_sym)
     I18n.locale = session[:locale] = params_locale || session[:locale] || I18n.default_locale
   end
+
+  def current_user
+    User.find_by(id: session[:current_user_id])
+  end
 end

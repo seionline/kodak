@@ -1,7 +1,45 @@
+<ul>
+  <% @order.errors.full_messages.each do |error_message| %>
+    <li><%= error_message %></li>
+  <% end %>
+</ul>
+
+<% # TODO: Show the uploaded pictures here, with possibility to delete or add more %>
+
+<% # TODO: I18n for the select options %>
+
 <%= form_with model: @order do |f| %>
   <p>
     <%= f.label :size %>
-    <%= f.select :size, Order::SIZES %>
+    <%= f.select :size, Order::SIZE_OPTIONS %>
+  </p>
+  <p>
+    <%= f.label :surface %>
+    <%= f.select :surface, Order::SURFACE_OPTIONS %>
+  </p>
+  <p>
+    <%= f.label :conversion %>
+    <%= f.select :conversion, Order::CONVERSION_OPTIONS %>
+  </p>
+  <p>
+    <%= f.label :white_frame %>
+    <%= f.select :white_frame, white_frame_options %>
+  </p>
+  <p>
+    <%= f.label :amount %>
+    <%= f.number_field :amount, min: 1, step: 1 %>
+  </p>
+  <p>
+    <%= f.label :special_requests %>
+    <%= f.text_area :special_requests %>
+  </p>
+  <p>
+    <%= f.label :delivery_method %>
+    <%= f.select :delivery_method, options_from_collection_for_select(@locations, :id, :name), include_blank: 'by post' %>
+  </p>
+  <p>
+    <%= f.label :payment_method %>
+    <%= f.select :payment_method, Order::PAYMENT_METHOD_OPTIONS %>
   </p>
   <%= f.submit %>
 <% end %>
