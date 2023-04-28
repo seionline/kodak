@@ -20,6 +20,10 @@ sk:
         phone: Telefón
         opening_hours: Otváracie hodiny
 
+  errors:
+    order_not_allowed: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
+    order_not_created: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
+
   faqs:
     real_sizes:
       title: Skutočné rozmery
@@ -104,3 +108,6 @@ sk:
       create:
         success_notice: Vaše heslo bolo úspešne zmenené.
         failure_alert: Vaše heslo sa nepodarilo zmeniť.
+
+  success:
+    order_updated: Vaša objednávka bola aktualizovaná.

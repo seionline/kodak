@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
       if allowed_order?(@order)
         render :edit
       else
-        # TODO: add error flash message
+        flash[:error] = t('errors.order_not_allowed')
         redirect_to root_path
       end
     end
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
       session[:order_id] = order.id
       redirect_to edit_order_path(order)
     else
-      # TODO: add error flash message
+      flash[:error] = t('errors.order_not_created')
       render :new
     end
   end
@@ -47,10 +47,10 @@ class OrdersController < ApplicationController
 
     if allowed_order?(@order)
       update_order
-      # TODO: add success flash message
+      flash[:success] = t('success.order_updated')
       redirect_to root_path
     else
-      # TODO: add error flash message
+      flash[:error] = t('errors.order_not_allowed')
       render :edit
     end
   end
