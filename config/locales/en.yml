@@ -45,7 +45,6 @@ en:
   errors:
     order_not_allowed: Sorry, something went wrong. Please, try to order again.
     order_not_created: Sorry, something went wrong. Please, try to order again.
-    order_not_updated: Sorry, we couldn't update your order. Please, try again.
 
   faqs:
     real_sizes:

@@ -50,7 +50,7 @@ class OrdersController < ApplicationController
       flash[:success] = t('success.order_updated')
       redirect_to root_path
     else
-      flash[:error] = t('errors.order_not_updated')
+      flash[:error] = t('errors.order_not_allowed')
       render :edit
     end
   end
