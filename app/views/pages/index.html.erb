@@ -1,1 +1,9 @@
-<h1><%= t('title') %></h1>
+<div class='hero hero-homepage flex justify-center items-center'>
+  <div class='bg-yellow-400 bg-opacity-80 p-12'>
+    <h1 class="hero-title big-title  "><%= t('index.title') %></h1>
+    <p class='text-center'><%= t('index.subtitle') %></p>
+    <p class='text-center'>
+      <%= link_to t('index.online_order'), new_order_path, class: 'text-center' %>
+    </p>
+  </div>
+</div>

@@ -12,6 +12,25 @@ h1, h2, h3, h4 {
   font-family: $heading-font;
 }
 
+h1 { 
+  font-size: 2em;
+}
 .logo {
   width: 200px;
+}
+
+.hero {
+  display: flex;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1em 2em;
+  min-height: 60vh;
+}
+
+.hero-homepage {
+  background-color: $primary-color;
+  background-image: url(hero.jpg);
+  background-position: 70% 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

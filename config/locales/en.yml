@@ -65,6 +65,11 @@ en:
       email: email
       prompt_html: If you have any questions don't hesitate to send us an %{email_link} to ask.
 
+  index:
+    online_order: Order online
+    subtitle: Order from the comfort of your home. We will deliver order to your home!
+    title: High quality KODAK photos produced by photo-chemical method
+    
   location:
     days: Monday - Sunday
     description_title: How to find us
