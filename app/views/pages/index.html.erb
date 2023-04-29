@@ -1,9 +1,9 @@
 <div class='hero hero-homepage flex justify-center items-center'>
-  <div class='bg-yellow-400 bg-opacity-80 p-12 flex flex-col content-center'>
-    <h1 class="hero-title big-title  "><%= t('index.title') %></h1>
-    <p class='text-center'><%= t('index.subtitle') %></p>
-    <p class='text-center btn-primary'>
-      <%= link_to t('index.online_order'), new_order_path, class: 'text-center' %>
+  <div class='bg-yellow-400 bg-opacity-80 p-12 flex flex-col justify-center text-center'>
+    <h1 class="hero-title big-title"><%= t('index.title') %></h1>
+    <p><%= t('index.subtitle') %></p>
+    <p class='btn-primary'>
+      <%= link_to t('index.online_order'), new_order_path %>
     </p>
   </div>
 </div>
