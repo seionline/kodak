@@ -4,17 +4,18 @@
       <%= image_tag 'location.jpeg', alt: t('activerecord.attributes.location.email') %>
       <div class="px-6 py-4">
         <h2><%= location.name %></h2>
-        <p><%= t('activerecord.attributes.location.opening_hours') %>:</p>
+        <p class='font-bold'><%= t('activerecord.attributes.location.opening_hours') %>:</p>
         <p><%= t('activerecord.attributes.location.days') %>: <%= location.opening_hours %></p>
         <br>
-        <p><%= t('activerecord.attributes.location.email') %>: <%= link_to location.email, "mailto:#{location.email}" %></p>
-        <p><%= t('activerecord.attributes.location.phone') %>: <%= link_to location.phone, "tel:#{location.phone}" %></p>
+        <p class='font-bold'><%= t('activerecord.attributes.location.email') %>: <%= link_to location.email, "mailto:#{location.email}" %></p>
+        <p class='font-bold'><%= t('activerecord.attributes.location.phone') %>: <%= link_to location.phone, "tel:#{location.phone}" %></p>
         <br>
-        <p><%= t('activerecord.attributes.location.address') %>:</p>
+        <p class='font-bold'><%= t('activerecord.attributes.location.address') %>:</p>
         <p><%= location.street %></p>
         <p><%= location.postcode %> <%=location.city %></p>
         <br>
-        <p><%= t('location.description_title') %>: <%=location.description[I18n.locale.to_s] %></p>
+        <p class='font-bold'><%= t('location.description_title') %>:</p>
+        <p><%=location.description[I18n.locale.to_s] %></p>
       </div>
     </div>
   <% end %>
