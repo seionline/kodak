@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  def index; end
+  def index
+    render layout: 'index'
+  end
 
   def faqs
     @email = 'info@kodak.sk'

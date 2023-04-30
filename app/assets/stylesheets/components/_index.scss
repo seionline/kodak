@@ -15,6 +15,11 @@ h1, h2, h3, h4 {
 
 h1 { 
   font-size: 1.5em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.2em;
 }
 
 .logo {
@@ -25,7 +30,7 @@ h1 {
   display: flex;
   height: auto;
   box-sizing: border-box;
-  padding: 1em 2em;
+  padding: 1em;
   min-height: 60vh;
 }
 
@@ -42,5 +47,13 @@ h1 {
 @media only screen and (min-width: 768px) {
   h1 {
     font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding: 1em 2em;
   }
 }
