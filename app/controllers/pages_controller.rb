@@ -2,6 +2,7 @@
 
 class PagesController < ApplicationController
   def index
+    @locations = Location.all
     render layout: 'index'
   end
 

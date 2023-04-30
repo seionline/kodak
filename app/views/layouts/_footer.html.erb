@@ -1,11 +1,8 @@
 <footer class='flex-shrink-0 text-sm'>
-  <div class='text-center bg-primary text-white py-8 mt-8'>
-    <p>
-    <%= link_to 'Privacy Policy', 'https://www.momslearntocode.com/privacy_policy', target: '_blank', class: 'hover-primary' %>
-      |
-      = link_to 'Impressum', 'https://www.momslearntocode.com/impressum', target: '_blank', class: 'hover-primary'
-    <p>© 2019 - <%= Time.current.year %>
-      <%= link_to 'Kodak Express', root_path, class: 'hover-primary' %>
+  <div class='text-center bg-primary py-8 mt-8'>
+    <p>© 2019 - <%= Time.current.year %> <%= link_to 'Kodak Express', root_path %></p>
+    <p>Made with ❤️ by 
+      <%= link_to 'Sei Online', 'https://www.seionline.ch', target: '_blank' %>
     </p>
   </div>
 </footer>

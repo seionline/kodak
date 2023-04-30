@@ -1,17 +1,2 @@
-<div class="container mx-auto mt-2 px-5">
-  <h1><%= t('activerecord.models.location', count: Location.count) %></h1>
-
-  <% @locations.each do |location| %>
-    <h2><%= location.name %></h2>
-    <p><%= t('activerecord.attributes.location.opening_hours') %>: <%= t('activerecord.attributes.location.days') %>: <%= location.opening_hours %></p>
-    <br>
-    <p><%= t('activerecord.attributes.location.email') %>: <%= location.email %></p>
-    <p><%= t('activerecord.attributes.location.phone') %>: <%= location.phone %></p>
-    <br>
-    <p><%= t('activerecord.attributes.location.address') %>:</p>
-    <p><%= location.street %></p>
-    <p><%= location.postcode %> <%=location.city %></p>
-    <br>
-    <p><%= t('location.description_title') %>: <%=location.description[I18n.locale.to_s] %></p>
-  <% end %>
-</div>
+<h1 class='text-center'><%= t('activerecord.models.location', count: Location.count) %></h1>
+<%= render 'layouts/locations' %> 

@@ -22,6 +22,22 @@ h2 {
   font-size: 1.2em;
 }
 
+a {
+  color: $kodak-red;
+}
+
+nav a {
+  color: black;
+}
+
+a:hover {
+  color: $kodak-red-hover;
+}
+
+nav a:hover {
+  color: $primary-color;
+}
+
 .logo {
   width: 200px;
 }
@@ -40,6 +56,10 @@ h2 {
   background-position: 70% 20%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.bg-hero-title {
+  background-color: #fdb931c4;
 }
 
 // Medium and large screens
