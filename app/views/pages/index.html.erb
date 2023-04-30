@@ -1,8 +1,8 @@
 <div class='hero hero-homepage flex justify-center items-center'>
-  <div class='bg-yellow-400 bg-opacity-80 bg-hero-title p-12 flex flex-col text-center'>
+  <div class='bg-yellow-400 bg-opacity-80 bg-hero-title p-12 flex flex-col items-center text-center rounded shadow-lg'>
     <h1 class="hero-title big-title"><%= t('index.title') %></h1>
     <p><%= t('index.subtitle') %></p>
-    <%= link_to t('index.online_order'), new_order_path, class: 'btn-primary' %>
+    <%= link_to t('index.online_order'), new_order_path, class: 'btn-primary w-48 rounded shadow-lg' %>
     <% #TODO: fix hover color to white %>
   </div>
 </div>
