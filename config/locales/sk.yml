@@ -43,6 +43,9 @@ sk:
       email: emailom
       prompt_html: Ak máte otázky, neváhajte sa opýtať %{email_link}.
 
+  footer:
+    credits: Wed design & development
+
   index:
     online_order: Online objednávka
     subtitle: Objednajte si z pohodlia Vášho domova. Objednávku pošleme k Vám domov!

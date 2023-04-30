@@ -1,7 +1,7 @@
 <footer class='flex-shrink-0 text-sm'>
   <div class='text-center bg-primary py-8 mt-8'>
-    <p>© 2019 - <%= Time.current.year %> <%= link_to 'Kodak Express', root_path %></p>
-    <p>Made with ❤️ by 
+    <p>© <%= Time.current.year %> <%= link_to 'Kodak Express', root_path %></p>
+    <p><%= t('footer.credits')  %>
       <%= link_to 'Sei Online', 'https://www.seionline.ch', target: '_blank' %>
     </p>
   </div>
