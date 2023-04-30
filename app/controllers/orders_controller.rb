@@ -32,8 +32,8 @@ class OrdersController < ApplicationController
 
   def create
     order = Order.build!(params[:order][:photos].compact_blank)
-    order.location = Location.first
     if order
+      order.location = Location.first
       session[:order_id] = order.id
       redirect_to edit_order_path(order)
     else
