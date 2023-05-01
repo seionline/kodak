@@ -1,0 +1,23 @@
+@import 'colors';
+
+table {
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+th {
+  border-bottom: 1px solid gray;
+  font-size: 1em;
+  padding: 15px;
+}
+
+td {
+  border-bottom: 1px solid gray;
+  padding: 15px;
+}
+
+tr:hover {
+  background-color: $primary-color;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .3s;
+}
