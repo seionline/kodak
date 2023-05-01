@@ -16,11 +16,13 @@ h1, h2, h3, h4 {
 h1 { 
   font-size: 1.5em;
   font-weight: bold;
+  margin: 1em 0 0.2em;
 }
 
 h2 {
   font-size: 1.2em;
   text-decoration: underline $kodak-red 2px;
+  margin: 1em 0 0.1em;
 }
 
 a {
