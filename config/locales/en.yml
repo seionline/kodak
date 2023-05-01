@@ -63,7 +63,7 @@ en:
       answer: Express print - 10 minutes to approx. 1 hour (only in the case of a large number of express orders), is for the same prices as an online order within 2 hours.
     footer:
       email: email
-      prompt_html: If you have any questions don't hesitate to send us an %{email_link} to ask.
+      prompt_html: If you have any questions don't hesitate to send us an %{email_link}.
 
   footer:
     credits: Made with ❤️ by
