@@ -1,0 +1,16 @@
+$primary-color: #FDBA31;
+$secondary-color: #f5f5fa;
+$kodak-red: #EE3226;
+$kodak-red-hover: #b7271d;
+
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-secondary-color {
+  background-color: $secondary-color;
+}
+
+.bg-red {
+  background-color: $kodak-red;
+}

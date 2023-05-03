@@ -1,0 +1,54 @@
+    <nav data-controller="toggle" class="bg-secondary-color border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex justify-between flex-wrap mx-auto">
+        <div>
+          <%= link_to (image_tag 'kodak-logo-small.png', class: 'logo'), root_path %>
+        </div>
+
+        <button data-action="click->toggle#toggle" type="button" class="inline-flex justify-end p-2 ml-3 text-sm text-gray-500 md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+          <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
+
+        <div data-toggle-target="element" class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium md:border-0 bg-secondary-color">
+            <li>
+              <%= link_to t('navigation.online_order'), new_order_path, class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.services'), '#', class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.products'), products_path, class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.pricelist'), pricelist_path, class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.discounts'), '#', class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.locations'), "#{root_path}#locations", class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.faq'), faqs_path, class: 'nav-item' %>
+            </li>
+            <li>
+              <%= link_to t('navigation.contact'), locations_path, class: 'nav-item' %>
+            </li>
+            <li>
+              <a href=<%= new_auth_session_path %>>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                  <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <% if I18n.locale == :sk %>
+                <%= locale_link t('navigation.english'), :en %>
+              <% else %>
+                <%= locale_link t('navigation.slovak'), :sk %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>

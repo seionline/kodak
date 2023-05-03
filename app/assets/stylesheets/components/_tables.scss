@@ -1,0 +1,32 @@
+@import 'colors';
+
+table {
+  font-size: 0.9em;
+  margin-top: 20px;
+}
+
+.photo-prices th {
+  font-size: 1em;
+}
+
+.photo-prices td, .photo-prices th {
+  border-bottom: 1px solid gray;
+}
+
+.td-fixed-width {
+  width: 600px;
+}
+
+.top-line {
+  border-top: 1px solid gray;
+}
+
+tr:hover {
+  background-color: $primary-color;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .3s;
+}
+
+th, td {
+  padding: 15px;
+}

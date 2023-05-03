@@ -1,8 +1,8 @@
 <h1><%= t('navigation.pricelist') %></h1>
 
-<%= link_to(t('navigation.real_sizes'), faqs_path) %>
+<%= link_to(t('pricelist.real_sizes'), faqs_path, class: 'text-sm') %>
 <h2><%= t('pricelist.online_order') %></h2>
-<table>
+<table class='photo-prices'>
   <tr>
     <th><%= t('pricelist.size') %></th>
     <th><%= t('pricelist.3days') %></th>
@@ -20,7 +20,7 @@
 </table> 
 
 <h2><%= t('pricelist.location_order') %></h2>
-<table>
+<table class='photo-prices'>
   <tr>
     <th><%= t('pricelist.size') %></th>
     <th><%= t('pricelist.3days') %></th>
@@ -35,14 +35,24 @@
       <td><%= number_with_precision(product.price3, precision: 2) %>€</td>
     </tr>
   <% end %>
-</table> 
+</table>
 
-<h2><%= t('pricelist.scan') %></h2>
+<% if @scan_products.present? %>
+  <h2><%= t('pricelist.scan') %></h2>
+  <%= render 'pricelist_table', products: @scan_products %>
+<% end %>
 
-<h2><%= t('pricelist.development') %></h2>
+<% if @film_development_products.present? %>
+  <h2><%= t('pricelist.development') %></h2>
+  <%= render 'pricelist_table', products: @film_development_products %>
+<% end %>
 
+<% if @present_products.present? %>
+  <h2><%= t('pricelist.presents') %></h2>
+  <%= render 'pricelist_table', products: @present_products %>
+<% end %>
 
-<h2><%= t('pricelist.presents') %></h2>
-
-
-<h2><%= t('pricelist.documents') %></h2>
+<% if @photo_id_products.present? %>
+  <h2><%= t('pricelist.documents') %></h2>
+  <%= render 'pricelist_table', products: @photo_id_products %>
+<% end %>

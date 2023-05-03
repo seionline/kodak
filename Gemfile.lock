@@ -256,11 +256,11 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.0.27-arm64-darwin)
+    tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.0.27-x86_64-darwin)
+    tailwindcss-rails (2.0.29-x86_64-darwin)
       railties (>= 6.0.0)
-    tailwindcss-rails (2.0.27-x86_64-linux)
+    tailwindcss-rails (2.0.29-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.1)
     tilt (2.1.0)
@@ -318,7 +318,7 @@ DEPENDENCIES
   simplecov (~> 0.12.0)
   sprockets-rails
   stimulus-rails
-  tailwindcss-rails (~> 2.0)
+  tailwindcss-rails (~> 2.0, >= 2.0.29)
   turbo-rails
   tzinfo-data
   web-console
@@ -328,4 +328,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.8
+   2.4.12

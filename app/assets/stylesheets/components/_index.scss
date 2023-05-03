@@ -1,4 +1,6 @@
 @import 'flash';
+@import 'colors';
+@import 'buttons';
 
 $heading-font: 'Open Sans', sans-serif;
 $body-font: 'Open Sans', sans-serif;
@@ -9,4 +11,72 @@ body, footer {
 
 h1, h2, h3, h4 {
   font-family: $heading-font;
+}
+
+h1 { 
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1em 0 0.2em;
+}
+
+h2 {
+  font-size: 1.2em;
+  text-decoration: underline $kodak-red 2px;
+  margin: 1em 0 0.1em;
+}
+
+a {
+  color: $kodak-red;
+}
+
+nav a {
+  color: black;
+}
+
+a:hover {
+  color: $kodak-red-hover;
+}
+
+nav a:hover {
+  color: $primary-color;
+}
+
+.logo {
+  width: 200px;
+}
+
+.hero {
+  display: flex;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1em;
+  min-height: 60vh;
+}
+
+.hero-homepage {
+  background-color: $primary-color;
+  background-image: url(hero.jpg);
+  background-position: 70% 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-hero-title {
+  background-color: #fdb931c4;
+}
+
+// Medium and large screens
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero {
+    padding: 1em 2em;
+  }
 }

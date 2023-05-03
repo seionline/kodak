@@ -43,6 +43,14 @@ sk:
       email: emailom
       prompt_html: Ak máte otázky, neváhajte sa opýtať %{email_link}.
 
+  footer:
+    credits: Wed design & development
+
+  index:
+    online_order: Online objednávka
+    subtitle: Objednajte si z pohodlia Vášho domova. Objednávku pošleme k Vám domov!
+    title: Kvalitné fotografie KODAK vyrobené foto-chemickou cestou
+
   location:
     days: Pondelok - Nedeľa
     description_title: Ako nás nájdete

@@ -54,7 +54,4 @@
 <h2><%= t('faqs.prices.title') %></h2>
 <p><strong><%= t('faqs.prices.question') %></strong></p>
 <p><%= t('faqs.prices.answer') %></p>
-
-<hr>
-
-<p><%= t('faqs.footer.prompt_html', email_link: link_to(t('faqs.footer.email'), "mailto:#{@email}").html_safe) %></p>
+<p class='mt-4'><%= t('faqs.footer.prompt_html', email_link: link_to(t('faqs.footer.email'), "mailto:#{@email}").html_safe) %></p>

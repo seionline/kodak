@@ -9,10 +9,11 @@
   <%= link_to t('auth.sessions.new.reset_password'), new_auth_password_reset_request_path %>
 </p>
 
-<%= form_for :auth_session, url: auth_session_path do |f| %>
+<%= form_for :auth_session, url: auth_session_path, class: 'flex flex-col items-start' do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
 
+  <% # TODO: translate password label %>
   <%= f.label :password %>
   <%= f.password_field :password %>
 

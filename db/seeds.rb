@@ -206,3 +206,226 @@ Product.create(
   price: 14.9,
   product_type: :presents
 )
+
+Product.create(
+  name: {
+    en: 'Mug with custom photo',
+    sk: 'Hrnček s Vašou fotografiou'
+  },
+  description: {
+    en: 'white or with colored inside',
+    sk: 'biely alebo s farebným vnútrom a uškom'
+  },
+  price: 12.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Mug with custom two photo or panoramatic photo',
+    sk: 'Hrnček s Vašou fotografiou dvojfoto alebo panoráma'
+  },
+  description: {
+    en: 'white or with colored inside',
+    sk: 'biely alebo s farebným vnútrom a uškom'
+  },
+  price: 14.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Magic mug',
+    sk: 'Magický hrnček'
+  },
+  description: {
+    en: 'TODO:',
+    sk: 'Hrnček je normálne tmavý, ale keď sa doň naleje horúca tekutina (čaj, kakao, ...)
+       zbledne a objaví sa obrázok, fotografia, nápis.'
+  },
+  price: 15.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'White t-shirt',
+    sk: 'Biele tričko'
+  },
+  description: {
+    en: 'White t-shirt with your photo',
+    sk: 'Biele tričko s Vašou fotografiou'
+  },
+  price: 15.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Puzzle A3 (24x36cm)',
+    sk: 'Puzzle A3 (24x36cm)'
+  },
+  description: {
+    en: '252 pieces',
+    sk: '252 dielikov'
+  },
+  price: 16.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Glass mug',
+    sk: 'Hrnček sklenený'
+  },
+  price: 15.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'TODO:',
+    sk: 'Podbradník'
+  },
+  description: {
+    en: 'blue or pink',
+    sk: 'modrý alebo ružový'
+  },
+  price: 12.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Whiskey glass',
+    sk: 'Pohár na whiskey'
+  },
+  description: {
+    en: 'matt glass',
+    sk: 'sklenený, matný'
+  },
+  price: 14.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Small Puzzle',
+    sk: 'Malé Puzzle'
+  },
+  description: {
+    en: '10x14 cm - 24 pieces',
+    sk: '10x14 cm - 24 dielikov'
+  },
+  price: 5.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Puzzle A5',
+    sk: 'Puzzle A5'
+  },
+  description: {
+    en: '60 pieces',
+    sk: '60 dielikov'
+  },
+  price: 7.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Wooden Puzzle',
+    sk: 'Puzzle drevené'
+  },
+  description: {
+    en: '30 pieces',
+    sk: '30 dielikov'
+  },
+  price: 15.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Mouse TODO:',
+    sk: 'Podložka pod myš'
+  },
+  description: {
+    en: 'with your photo',
+    sk: 's Vašou fotografiou'
+  },
+  price: 13.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'TODO:',
+    sk: 'Podložka pod pohár'
+  },
+  description: {
+    en: 'with your photo',
+    sk: 's Vašou fotografiou'
+  },
+  price: 4.5,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Plushies',
+    sk: 'Plyšové hračky'
+  },
+  description: {
+    en: 'bear, frog, sheep, duck and others',
+    sk: 'Medvedík, Žabka, Ovečka, Kačica a daľšie'
+  },
+  price: 17.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Ceramic oval',
+    sk: 'Keramický ovál'
+  },
+  description: {
+    en: 'photo for grave - coloured / black and white',
+    sk: 'foto na pomník - farebné / čiernobiele'
+  },
+  price: 12.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Cussion 40x40 cm',
+    sk: 'Vankúš 40x40 cm'
+  },
+  description: {
+    en: 'with your photo',
+    sk: 's Vašou fotografiou'
+  },
+  price: 12.9,
+  product_type: :presents
+)
+
+Product.create(
+  name: {
+    en: 'Foto na doklady',
+    sk: 'ID photographs'
+  },
+  price: 8.5,
+  description: {
+    en: 'TODO: translate when I will have internet',
+    sk: 'Fotografie rozmerov 3x3,5 cm (občiansky preukaz), 3,5x4,5 cm (pas). Fotografie s bielym, /
+      sivým či iným pozadím podľa priania ľubovoľných rozmerov do 10x15 cm, na víza, indexy či akékoľvek /
+      iné preukazy - cena zahŕňa 4 ks fotografií na OP, PAS alebo 2 ks na víza, či 1 ks 9x13 alebo 10x15. /
+      Ďalšie 4 ks fotografií na preukaz ( 2 ks na víza a pod) 3,50€. Fotografie na preukaz z prineseného /
+      negatívu či digitálnej fotografie 8,50 € Cena zahŕňa aj sken negatívu, či potrebné jednoduché úpravy /
+      digitálnych dát.'
+  },
+  product_type: :photo_id
+)
