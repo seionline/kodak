@@ -39,85 +39,20 @@
 
 <% if @scan_products.present? %>
   <h2><%= t('pricelist.scan') %></h2>
-  <table>
-    <% @scan_products.each do |product| %>
-      <tr>
-        <td class='font-bold'><%= product.name[I18n.locale.to_s] %></td>
-        <td class='font-bold'><%= number_with_precision(product.price, precision: 2) %>€</td>
-      </tr>
-      <% if product.description.present? %>
-        <tr>
-          <td><%= product.description[I18n.locale.to_s] %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
+  <%= render 'pricelist_table', products: @scan_products %>
 <% end %>
 
 <% if @film_development_products.present? %>
   <h2><%= t('pricelist.development') %></h2>
-  <table>
-    <% @film_development_products.each do |product| %>
-      <tr>
-        <td class='font-bold'><%= product.name[I18n.locale.to_s] %></td>
-        <td class='font-bold'><%= number_with_precision(product.price, precision: 2) %>€</td>
-      </tr>
-      <% if product.description.present? %>
-        <tr>
-          <td><%= product.description[I18n.locale.to_s] %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
+  <%= render 'pricelist_table', products: @film_development_products %>
 <% end %>
 
 <% if @present_products.present? %>
   <h2><%= t('pricelist.presents') %></h2>
-  <table>
-    <% @present_products.each do |product| %>
-      <tr>
-        <td class='font-bold'><%= product.name[I18n.locale.to_s] %></td>
-        <td class='font-bold'><%= number_with_precision(product.price, precision: 2) %>€</td>
-      </tr>
-      <% if product.description.present? %>
-        <tr>
-          <td><%= product.description[I18n.locale.to_s] %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
-<% end %>
-
-<% if @present_products.present? %>
-  <h2><%= t('pricelist.documents') %></h2>
-  <table>
-    <% @present_products.each do |product| %>
-      <tr>
-        <td class='font-bold'><%= product.name[I18n.locale.to_s] %></td>
-        <td class='font-bold'><%= number_with_precision(product.price, precision: 2) %>€</td>
-      </tr>
-      <% if product.description.present? %>
-        <tr>
-          <td><%= product.description[I18n.locale.to_s] %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
+  <%= render 'pricelist_table', products: @present_products %>
 <% end %>
 
 <% if @photo_id_products.present? %>
   <h2><%= t('pricelist.documents') %></h2>
-  <table>
-    <% @photo_id_products.each do |product| %>
-      <tr>
-        <td class='font-bold'><%= product.name[I18n.locale.to_s] %></td>
-        <td class='font-bold'><%= number_with_precision(product.price, precision: 2) %>€</td>
-      </tr>
-      <% if product.description.present? %>
-        <tr>
-          <td><%= product.description[I18n.locale.to_s] %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
+  <%= render 'pricelist_table', products: @photo_id_products %>
 <% end %>
