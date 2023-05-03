@@ -421,10 +421,11 @@ Product.create(
   description: {
     en: 'TODO: translate when I will have internet',
     sk: 'Fotografie rozmerov 3x3,5 cm (občiansky preukaz), 3,5x4,5 cm (pas). Fotografie s bielym, /
-    sivým či iným pozadím podľa priania ľubovoľných rozmerov do 10x15 cm, na víza, indexy či akékoľvek /
-    iné preukazy - cena zahŕňa 4 ks fotografií na OP, PAS alebo 2 ks na víza, či 1 ks 9x13 alebo 10x15. /
-    Ďalšie 4 ks fotografií na preukaz ( 2 ks na víza a pod) 3,50€. Fotografie na preukaz z prineseného /
-    negatívu či digitálnej fotografie 8,50 € Cena zahŕňa aj sken negatívu, či potrebné jednoduché úpravy digitálnych dát.'
+      sivým či iným pozadím podľa priania ľubovoľných rozmerov do 10x15 cm, na víza, indexy či akékoľvek /
+      iné preukazy - cena zahŕňa 4 ks fotografií na OP, PAS alebo 2 ks na víza, či 1 ks 9x13 alebo 10x15. /
+      Ďalšie 4 ks fotografií na preukaz ( 2 ks na víza a pod) 3,50€. Fotografie na preukaz z prineseného /
+      negatívu či digitálnej fotografie 8,50 € Cena zahŕňa aj sken negatívu, či potrebné jednoduché úpravy /
+      digitálnych dát.'
   },
   product_type: :photo_id
 )
