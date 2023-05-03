@@ -240,8 +240,8 @@ Product.create(
   },
   description: {
     en: 'TODO:',
-    sk: 'Magický hrnček 15,90 € hrnček je normálne tmavý, ale keď sa doň naleje horúca tekutina \
-      (čaj, kakao, ...) zbledne a objaví sa obrázok, fotografia, nápis ...'
+    sk: 'Hrnček je normálne tmavý, ale keď sa doň naleje horúca tekutina (čaj, kakao, ...)
+       zbledne a objaví sa obrázok, fotografia, nápis.'
   },
   price: 15.9,
   product_type: :presents

@@ -6,21 +6,27 @@ table {
 }
 
 .photo-prices th {
-  border-bottom: 1px solid gray;
   font-size: 1em;
-  padding: 15px;
 }
 
-.photo-prices td {
+.photo-prices td, .photo-prices th {
   border-bottom: 1px solid gray;
-  padding: 15px;
+}
+
+.td-fixed-width {
+  width: 600px;
 }
 
 .top-line {
   border-top: 1px solid gray;
 }
+
 tr:hover {
   background-color: $primary-color;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-duration: .3s;
+}
+
+th, td {
+  padding: 15px;
 }
