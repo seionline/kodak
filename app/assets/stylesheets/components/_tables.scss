@@ -5,17 +5,20 @@ table {
   margin-top: 20px;
 }
 
-th {
+.photo-prices th {
   border-bottom: 1px solid gray;
   font-size: 1em;
   padding: 15px;
 }
 
-td {
+.photo-prices td {
   border-bottom: 1px solid gray;
   padding: 15px;
 }
 
+.top-line {
+  border-top: 1px solid gray;
+}
 tr:hover {
   background-color: $primary-color;
   transition-timing-function: cubic-bezier(.4,0,.2,1);

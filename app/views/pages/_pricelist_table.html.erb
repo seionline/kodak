@@ -1,12 +1,12 @@
 <table>
   <% products.each do |product| %>
     <tr>
-      <td class='font-bold'><%= product.name[I18n.locale.to_s] %></td>
-      <td class='font-bold'><%= number_with_precision(product.price, precision: 2) %>€</td>
+      <td class='font-bold top-line'><%= product.name[I18n.locale.to_s] %></td>
+      <td class='font-bold top-line pl-5'><%= number_with_precision(product.price, precision: 2) %>€</td>
     </tr>
     <% if product.description.present? %>
       <tr>
-        <td><%= product.description[I18n.locale.to_s] %></td>
+        <td class='break-normalt'><%= product.description[I18n.locale.to_s] %></td>
       </tr>
     <% end %>
   <% end %>
