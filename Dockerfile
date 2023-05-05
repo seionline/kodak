@@ -1,146 +1,117 @@
+# syntax = docker/dockerfile:experimental
+
+# Dockerfile used to build a deployable image for a Rails application.
+# Adjust as required.
 #
-# NOTE: THIS DOCKERFILE IS GENERATED VIA "apply-templates.sh"
+# Common adjustments you may need to make over time:
+#  * Modify version numbers for Ruby, Bundler, and other products.
+#  * Add library packages needed at build time for your gems, node modules.
+#  * Add deployment packages needed by your application
+#  * Add (often fake) secrets needed to compile your assets
+
+#######################################################################
+
+# Learn more about the chosen Ruby stack, Fullstaq Ruby, here:
+#   https://github.com/evilmartians/fullstaq-ruby-docker.
 #
-# PLEASE DO NOT EDIT IT DIRECTLY.
-#
+# We recommend using the highest patch level for better security and
+# performance.
 
-FROM debian:bullseye-slim
+ARG RUBY_VERSION=3.2.2
+ARG VARIANT=jemalloc-slim
+FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 
-RUN set -eux; \
-	apt-get update; \
-	apt-get install -y --no-install-recommends \
-		bzip2 \
-		ca-certificates \
-		libffi-dev \
-		libgmp-dev \
-		libssl-dev \
-		libyaml-dev \
-		procps \
-		zlib1g-dev \
-	; \
-	rm -rf /var/lib/apt/lists/*
+LABEL fly_launch_runtime="rails"
 
-# skip installing gem documentation
-RUN set -eux; \
-	mkdir -p /usr/local/etc; \
-	{ \
-		echo 'install: --no-document'; \
-		echo 'update: --no-document'; \
-	} >> /usr/local/etc/gemrc
+ARG BUNDLER_VERSION=2.4.12
 
-ENV LANG C.UTF-8
-ENV RUBY_MAJOR 3.2
-ENV RUBY_VERSION 3.2.2
-ENV RUBY_DOWNLOAD_SHA256 4b352d0f7ec384e332e3e44cdbfdcd5ff2d594af3c8296b5636c710975149e23
+ARG RAILS_ENV=production
+ENV RAILS_ENV=${RAILS_ENV}
 
-# some of ruby's build scripts are written in ruby
-#   we purge system ruby later to make sure our final image uses what we just built
-RUN set -eux; \
-	\
-	savedAptMark="$(apt-mark showmanual)"; \
-	apt-get update; \
-	apt-get install -y --no-install-recommends \
-		bison \
-		dpkg-dev \
-		libgdbm-dev \
-		ruby \
-		autoconf \
-		g++ \
-		gcc \
-		libbz2-dev \
-		libgdbm-compat-dev \
-		libglib2.0-dev \
-		libncurses-dev \
-		libreadline-dev \
-		libxml2-dev \
-		libxslt-dev \
-		make \
-		wget \
-		xz-utils \
-	; \
-	rm -rf /var/lib/apt/lists/*; \
-	\
-	rustArch=; \
-	dpkgArch="$(dpkg --print-architecture)"; \
-	case "$dpkgArch" in \
-		'amd64') rustArch='x86_64-unknown-linux-gnu'; rustupUrl='https://static.rust-lang.org/rustup/archive/1.25.1/x86_64-unknown-linux-gnu/rustup-init'; rustupSha256='5cc9ffd1026e82e7fb2eec2121ad71f4b0f044e88bca39207b3f6b769aaa799c' ;; \
-		'arm64') rustArch='aarch64-unknown-linux-gnu'; rustupUrl='https://static.rust-lang.org/rustup/archive/1.25.1/aarch64-unknown-linux-gnu/rustup-init'; rustupSha256='e189948e396d47254103a49c987e7fb0e5dd8e34b200aa4481ecc4b8e41fb929' ;; \
-	esac; \
-	\
-	if [ -n "$rustArch" ]; then \
-		mkdir -p /tmp/rust; \
-		\
-		wget -O /tmp/rust/rustup-init "$rustupUrl"; \
-		echo "$rustupSha256 */tmp/rust/rustup-init" | sha256sum --check --strict; \
-		chmod +x /tmp/rust/rustup-init; \
-		\
-		export RUSTUP_HOME='/tmp/rust/rustup' CARGO_HOME='/tmp/rust/cargo'; \
-		export PATH="$CARGO_HOME/bin:$PATH"; \
-		/tmp/rust/rustup-init -y --no-modify-path --profile minimal --default-toolchain '1.66.0' --default-host "$rustArch"; \
-		\
-		rustc --version; \
-		cargo --version; \
-	fi; \
-	\
-	wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz"; \
-	echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum --check --strict; \
-	\
-	mkdir -p /usr/src/ruby; \
-	tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1; \
-	rm ruby.tar.xz; \
-	\
-	cd /usr/src/ruby; \
-	\
-# hack in "ENABLE_PATH_CHECK" disabling to suppress:
-#   warning: Insecure world writable dir
-	{ \
-		echo '#define ENABLE_PATH_CHECK 0'; \
-		echo; \
-		cat file.c; \
-	} > file.c.new; \
-	mv file.c.new file.c; \
-	\
-	autoconf; \
-	gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)"; \
-	./configure \
-		--build="$gnuArch" \
-		--disable-install-doc \
-		--enable-shared \
-		${rustArch:+--enable-yjit} \
-	; \
-	make -j "$(nproc)"; \
-	make install; \
-	\
-	rm -rf /tmp/rust; \
-	apt-mark auto '.*' > /dev/null; \
-	apt-mark manual $savedAptMark > /dev/null; \
-	find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' \
-		| awk '/=>/ { print $(NF-1) }' \
-		| sort -u \
-		| grep -vE '^/usr/local/lib/' \
-		| xargs -r dpkg-query --search \
-		| cut -d: -f1 \
-		| sort -u \
-		| xargs -r apt-mark manual \
-	; \
-	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
-	\
-	cd /; \
-	rm -r /usr/src/ruby; \
-# verify we have no "ruby" packages installed
-	if dpkg -l | grep -i ruby; then exit 1; fi; \
-	[ "$(command -v ruby)" = '/usr/local/bin/ruby' ]; \
-# rough smoke test
-	ruby --version; \
-	gem --version; \
-	bundle --version
+ENV RAILS_SERVE_STATIC_FILES true
+ENV RAILS_LOG_TO_STDOUT true
 
-# don't create ".bundle" in all our apps
-ENV GEM_HOME /usr/local/bundle
-ENV BUNDLE_SILENCE_ROOT_WARNING=1 \
-	BUNDLE_APP_CONFIG="$GEM_HOME"
-ENV PATH $GEM_HOME/bin:$PATH
-# adjust permissions of a few directories for running "gem install" as an arbitrary user
-RUN mkdir -p "$GEM_HOME" && chmod 1777 "$GEM_HOME"
+ARG BUNDLE_WITHOUT=development:test
+ARG BUNDLE_PATH=vendor/bundle
+ENV BUNDLE_PATH ${BUNDLE_PATH}
+ENV BUNDLE_WITHOUT ${BUNDLE_WITHOUT}
 
-CMD [ "irb" ]
+RUN mkdir /app
+WORKDIR /app
+RUN mkdir -p tmp/pids
+
+RUN gem update --system --no-document && \
+    gem install -N bundler -v ${BUNDLER_VERSION}
+
+#######################################################################
+
+# install packages only needed at build time
+
+FROM base as build_deps
+
+ARG BUILD_PACKAGES="git build-essential libpq-dev wget vim curl gzip xz-utils libsqlite3-dev"
+ENV BUILD_PACKAGES ${BUILD_PACKAGES}
+
+RUN --mount=type=cache,id=dev-apt-cache,sharing=locked,target=/var/cache/apt \
+    --mount=type=cache,id=dev-apt-lib,sharing=locked,target=/var/lib/apt \
+    apt-get update -qq && \
+    apt-get install --no-install-recommends -y ${BUILD_PACKAGES} \
+    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+#######################################################################
+
+# install gems
+
+FROM build_deps as gems
+
+COPY Gemfile* ./
+RUN bundle install && rm -rf vendor/bundle/ruby/*/cache
+
+#######################################################################
+
+# install deployment packages
+
+FROM base
+
+ARG DEPLOY_PACKAGES="postgresql-client file vim curl gzip libsqlite3-0 libvips"
+ENV DEPLOY_PACKAGES=${DEPLOY_PACKAGES}
+
+RUN --mount=type=cache,id=prod-apt-cache,sharing=locked,target=/var/cache/apt \
+    --mount=type=cache,id=prod-apt-lib,sharing=locked,target=/var/lib/apt \
+    apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    ${DEPLOY_PACKAGES} \
+    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# copy installed gems
+COPY --from=gems /app /app
+COPY --from=gems /usr/lib/fullstaq-ruby/versions /usr/lib/fullstaq-ruby/versions
+COPY --from=gems /usr/local/bundle /usr/local/bundle
+
+#######################################################################
+
+# Deploy your application
+COPY . .
+
+# Adjust binstubs to run on Linux and set current working directory
+RUN chmod +x /app/bin/* && \
+    sed -i 's/ruby.exe\r*/ruby/' /app/bin/* && \
+    sed -i 's/ruby\r*/ruby/' /app/bin/* && \
+    sed -i '/^#!/aDir.chdir File.expand_path("..", __dir__)' /app/bin/*
+
+# The following enable assets to precompile on the build server.  Adjust
+# as necessary.  If no combination works for you, see:
+# https://fly.io/docs/rails/getting-started/existing/#access-to-environment-variables-at-build-time
+ENV SECRET_KEY_BASE 1
+# ENV AWS_ACCESS_KEY_ID=1
+# ENV AWS_SECRET_ACCESS_KEY=1
+
+# Run build task defined in lib/tasks/fly.rake
+ARG BUILD_COMMAND="RAILS_ENV=production bin/rails fly:build"
+RUN ${BUILD_COMMAND}
+
+# Default server start instructions.  Generally Overridden by fly.toml.
+ENV PORT 8080
+ARG SERVER_COMMAND="bin/rails fly:server"
+ENV SERVER_COMMAND ${SERVER_COMMAND}
+CMD ${SERVER_COMMAND}
