@@ -65,7 +65,8 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:size, :surface, :conversion, :white_frame, :amount, :payment_method, :special_requests)
+    params.require(:order).permit(:size, :surface, :conversion, :white_frame, :amount, :payment_method,
+                                  :special_requests)
   end
 
   def allowed_order?(order)
