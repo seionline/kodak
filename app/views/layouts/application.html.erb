@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
   <%= render 'layouts/head' %>
-  <body>
-    <%= render 'layouts/navbar' %>
-    <main class="container mx-auto mt-2 px-6 md:px-24">
-      <%= yield %>
-    </main>
+  <body class='flex flex-col justify-between h-screen'>
+    <div>
+      <%= render 'layouts/navbar' %>
+      <main class="container mx-auto mt-2 px-6 md:px-24">
+        <%= yield %>
+      </main>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
-  <%= render 'layouts/footer' %>
 </html>
