@@ -10,6 +10,8 @@
 
 <% # TODO: dismiss order button %>
 
+<% # TODO: show flashes, errors %>
+
 <%= form_with model: @order do |f| %>
   <p>
     <%= f.label :size %>
@@ -37,7 +39,7 @@
   </p>
   <p>
     <%= f.label :delivery_method %>
-    <%= f.select :delivery_method, options_from_collection_for_select(@locations, :id, :name), include_blank: 'by post' %>
+    <%= f.select :delivery_method, delivery_method_select_options(@order, @locations), include_blank: true %>
   </p>
   <p>
     <%= f.label :payment_method %>

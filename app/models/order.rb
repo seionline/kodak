@@ -47,4 +47,12 @@ class Order < ApplicationRecord
   def pickup?
     delivery_method == DELIVERY_METHOD_PICKUP
   end
+
+  def delivery_method_selection
+    if pickup?
+      location.id
+    else
+      DELIVERY_METHOD_POST
+    end
+  end
 end
