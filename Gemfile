@@ -52,11 +52,12 @@ gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.29'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem 'faker', '~> 3.1', '>= 3.1.1'
+
 group :development, :test do
   gem 'brakeman', '~> 5.4', '>= 5.4.1'
   gem 'bundler-audit', '~> 0.9.1'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker', '~> 3.1', '>= 3.1.1'
   gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', '~> 1.48'
   gem 'rubocop-rails', '~> 2.19'
