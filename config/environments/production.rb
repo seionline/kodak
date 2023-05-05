@@ -92,4 +92,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Needed because SassC::SyntaxError: Error: Function rgb is missing argument $green.
+  # otherwise in production asset compilation, see also: https://github.com/tailwindlabs/tailwindcss/discussions/6738
+  config.assets.css_compressor = nil
 end

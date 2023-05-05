@@ -1,7 +1,7 @@
 <div class='md:flex justify-center'>
   <% @locations.each do |location| %>
     <div class="max-w-sm rounded shadow-lg m-4 flex-1">
-      <%= image_tag 'location.jpeg', alt: t('activerecord.attributes.location.email') %>
+      <%= image_tag 'location.jpg', alt: t('activerecord.attributes.location.email') %>
       <div class="px-6 py-4">
         <h2><%= location.name %></h2>
         <p class='font-bold'><%= t('activerecord.attributes.location.opening_hours') %>:</p>
