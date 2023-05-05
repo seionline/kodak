@@ -1,6 +1,7 @@
 ---
 sk:
   activerecord:
+
     attributes:
       location:
         address: Adresa
@@ -8,6 +9,8 @@ sk:
         description: Ako nás nájdete
         email: Email
         opening_hours: Otváracie hodiny
+      order:
+        user: Zákazník
         phone: Telefón
     models:
       location:

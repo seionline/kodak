@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   get 'pricelist', to: 'pages#pricelist'
   get 'products', to: 'pages#products'
 
+  namespace :admin do
+    resources :orders, only: %i[index]
+  end
+
   resources :users, only: %i[new create]
   namespace :auth do
     resources :email_confirmations, only: %i[new create]

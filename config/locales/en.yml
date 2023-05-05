@@ -18,6 +18,7 @@ en:
       user:
         one: User
         other: Users
+
   auth:
     email_confirmations:
       create:

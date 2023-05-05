@@ -1,0 +1,15 @@
+<h1><%= t('activerecord.models.order', count: Order.count) %></h1>
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.order.user') %></th>
+    <th><%= t('activerecord.attributes.order.status') %></th>
+    <th><%= t('activerecord.attributes.order.location') %></th>
+  </tr>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order&.user&.name %></td>
+      <td><%= order.status %></td>
+      <td><%= order&.location&.name %></td>
+    </tr>
+  <% end %>
+</table> 
