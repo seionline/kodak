@@ -9,6 +9,9 @@ en:
       location:
         one: Location
         other: Locations
+      order:
+        one: Order
+        other: Orders
 
     attributes:
       location:
