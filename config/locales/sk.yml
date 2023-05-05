@@ -11,6 +11,10 @@ sk:
         one: Prevádzka
         few: Prevádzky
         other: Prevádzky
+      order:
+        one: Objednávka
+        few: Objednávky
+        other: Objednávky
     attributes:
       location:
         address: Adresa
