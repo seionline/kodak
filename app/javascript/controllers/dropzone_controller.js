@@ -6,7 +6,7 @@ import {
   findElement,
   removeElement,
   insertAfter
-} from "../helpers";
+} from "../helpers/index.js";
 
 export default class extends Controller {
   static targets = ["input"];
