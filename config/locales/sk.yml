@@ -27,6 +27,7 @@ sk:
   errors:
     order_not_allowed: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
     order_not_created: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
+    order_not_updated: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
 
   faqs:
     real_sizes:

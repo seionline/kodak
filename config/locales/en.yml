@@ -48,6 +48,7 @@ en:
   errors:
     order_not_allowed: Sorry, something went wrong. Please, try to order again.
     order_not_created: Sorry, something went wrong. Please, try to order again.
+    order_not_updated: Sorry, something went wrong. Please, try to order again.
 
   faqs:
     real_sizes:
@@ -120,3 +121,8 @@ en:
 
     success:
       order_updated: Your order was updated.
+
+  orders:
+    submit_save: Save order
+    submit_place: Place order
+    submit_destroy: Dismiss order
