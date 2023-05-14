@@ -2,8 +2,8 @@
 
 class OrderUpdateService
   def initialize(order, params)
-    self.order = order
-    self.params = params
+    @order = order
+    @params = params
   end
 
   def perform
