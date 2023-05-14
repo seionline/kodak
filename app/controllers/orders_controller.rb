@@ -37,19 +37,9 @@ class OrdersController < ApplicationController
     @locations = Location.all
 
     if allowed_order?(@order)
-      if update_order
-        if params[:commit] == I18n.t('orders.submit_place')
-          # TODO: actually place order?
-        end
-
-        flash[:success] = t('success.order_updated')
-        redirect_to root_path
-      else
-        flash.now[:error] = t('errors.order_not_updated')
-        render :edit
-      end
+      update_order
     else
-      flash[:error] = t('errors.order_not_allowed')
+      flash.now[:error] = t('errors.order_not_allowed')
       render :edit
     end
   end
@@ -62,32 +52,18 @@ class OrdersController < ApplicationController
 
   private
 
-  def order_params
-    params.require(:order).permit(:size, :surface, :conversion, :white_frame, :amount, :payment_method,
-                                  :special_requests)
-  end
-
   def update_order
-    delivery_method = params[:order].delete(:delivery_method)
-
-    if delivery_method.blank?
-      @order.errors.add(:delivery_method, t('errors.messages.blank'))
-      return false
-    end
-
-    photo_keys = params[:order][:photos].compact_blank
-    photo_keys.each { |pk| @order.order_items.create!(photo: Photo.new(attachment: pk)) }
-
-    ActiveRecord::Base.transaction do
-      @order.assign_attributes(order_params)
-      if delivery_method == Order::DELIVERY_METHOD_POST
-        @order.delivery_method = Order::DELIVERY_METHOD_POST
-      else
-        @order.delivery_method = Order::DELIVERY_METHOD_PICKUP
-        @order.location = Location.find(delivery_method)
+    service = OrderUpdateService.new(@order, params)
+    if service.perform
+      if params[:commit] == I18n.t('orders.submit_place')
+        # TODO: actually place order?
       end
-      @order.save
-      true
+
+      flash[:success] = t('success.order_updated')
+      redirect_to root_path
+    else
+      flash.now[:error] = t('errors.order_not_updated')
+      render :edit
     end
   end
 end
