@@ -54,6 +54,8 @@ gem 'tailwindcss-rails', '~> 2.0', '>= 2.0.29'
 
 gem 'faker', '~> 3.1', '>= 3.1.1'
 
+gem 'image_processing', '~> 1.2'
+
 group :development, :test do
   gem 'brakeman', '~> 5.4', '>= 5.4.1'
   gem 'bundler-audit', '~> 0.9.1'

@@ -50,6 +50,10 @@ class OrdersController < ApplicationController
 
     if allowed_order?(@order)
       if update_order
+        if params[:commit] == I18n.t('orders.submit_place')
+          # TODO: actually place order?
+        end
+
         flash[:success] = t('success.order_updated')
         redirect_to root_path
       else
@@ -62,6 +66,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    order = Order.find(params[:id])
+    order.destroy!
+    redirect_to root_path
+  end
+
   private
 
   def order_params
@@ -69,23 +79,24 @@ class OrdersController < ApplicationController
                                   :special_requests)
   end
 
-  def allowed_order?(order)
-    (order.user.present? && order.user == current_user) || session[:order_id] == order.id
-  end
-
   def update_order
-    if params[:order][:delivery_method].blank?
+    delivery_method = params[:order].delete(:delivery_method)
+
+    if delivery_method.blank?
       @order.errors.add(:delivery_method, t('errors.messages.blank'))
       return false
     end
 
+    photo_keys = params[:order][:photos].compact_blank
+    photo_keys.each { |pk| @order.order_items.create!(photo: Photo.new(attachment: pk)) }
+
     ActiveRecord::Base.transaction do
       @order.assign_attributes(order_params)
-      if params[:order][:delivery_method] == Order::DELIVERY_METHOD_POST
+      if delivery_method == Order::DELIVERY_METHOD_POST
         @order.delivery_method = Order::DELIVERY_METHOD_POST
       else
         @order.delivery_method = Order::DELIVERY_METHOD_PICKUP
-        @order.location = Location.find(params[:order][:delivery_method])
+        @order.location = Location.find(delivery_method)
       end
       @order.save
       true

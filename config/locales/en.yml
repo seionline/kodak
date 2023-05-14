@@ -121,3 +121,8 @@ en:
 
     success:
       order_updated: Your order was updated.
+
+  orders:
+    submit_save: Save order
+    submit_place: Place order
+    submit_destroy: Dismiss order

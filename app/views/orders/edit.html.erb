@@ -12,14 +12,20 @@
 
 <% # TODO: show flashes %>
 
+<% @order.photos.each do |photo| %>
+  <div>
+    <%= image_tag photo.attachment.variant(:thumb) %>
+    <%= button_to 'delete', photo_path(photo), method: :delete %>
+  </div>
+<% end %>
+
 <%= form_with model: @order, multipart: true do |f| %>
   <p>
     <%= f.label :photos %>
-    <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-max-file-size="5" data-dropzone-max-files="10">
-    <%= f.file_field :photos, multiple: true, direct_upload: true, data: { 'dropzone-target': 'input' } %>
-    <div class="dropzone-msg dz-message needsclick text-gray-600">
-      <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
-      <span class="dropzone-msg-desc text-sm">5 MB file size maximum. Allowed file types png, jpg.</span>
+    <div class="dropzone dropzone-default dz-clickable" data-controller="dropzone" data-dropzone-accepted-files="image/*" data-dropzone-max-files="1000">
+      <%= f.file_field :photos, multiple: true, direct_upload: true, data: { 'dropzone-target': 'input' } %>
+      <div class="dropzone-msg dz-message needsclick text-gray-600">
+        <h3 class="dropzone-msg-title">Drag here to upload or click here to browse</h3>
       </div>
     </div>
   </p>
@@ -56,5 +62,8 @@
     <%= f.label :payment_method %>
     <%= f.select :payment_method, Order::PAYMENT_METHOD_OPTIONS %>
   </p>
-  <%= f.submit %>
+  <%= f.submit t('orders.submit_save') %>
+  <%= f.submit t('orders.submit_place') %>
 <% end %>
+
+<%= button_to t('orders.submit_destroy'), order_path(@order), method: :delete %>
