@@ -32,18 +32,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # def create
-  #   order = Order.build!(params[:order][:photos].compact_blank)
-  #   if order
-  #     order.location = Location.first
-  #     session[:order_id] = order.id
-  #     redirect_to edit_order_path(order)
-  #   else
-  #     flash[:error] = t('errors.order_not_created')
-  #     render :new
-  #   end
-  # end
-
   def update
     @order = Order.find(params[:id])
     @locations = Location.all
