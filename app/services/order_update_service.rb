@@ -7,8 +7,6 @@ class OrderUpdateService
   end
 
   def perform
-    delivery_method = params[:order].delete(:delivery_method)
-
     if delivery_method.blank?
       order.errors.add(:delivery_method, t('errors.messages.blank'))
       return false
@@ -24,8 +22,8 @@ class OrderUpdateService
 
   def update_fields_and_save
     ActiveRecord::Base.transaction do
-      order.assign_attributes(order_params)
       add_delivery_method_and_location
+      order.assign_attributes(order_params)
       order.save
     end
   end
@@ -42,6 +40,10 @@ class OrderUpdateService
       order.delivery_method = Order::DELIVERY_METHOD_PICKUP
       order.location = Location.find(delivery_method)
     end
+  end
+
+  def delivery_method
+    @delivery_method ||= params[:order].delete(:delivery_method)
   end
 
   def order_params
