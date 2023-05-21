@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
 
+  helper_method :current_user, :logged_in?
+
   private
 
   def set_locale

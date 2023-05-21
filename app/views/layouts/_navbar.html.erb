@@ -34,13 +34,23 @@
             <li>
               <%= link_to t('navigation.contact'), locations_path, class: 'nav-item' %>
             </li>
-            <li>
-              <a  class='nav-item' href=<%= new_auth_session_path %>>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                  <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
-                </svg>
-              </a>
-            </li>
+            <% if logged_in? %>
+              <li>
+                <%# TODO i18n %>
+                Logged in as <%= current_user.name %>
+              </li>
+              <li>
+                <%= link_to ActiveModel::Naming.plural(Order), orders_path, class: 'nav-item' %>
+              </li>
+            <% else %>
+              <li>
+                <a  class='nav-item' href=<%= new_auth_session_path %>>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
+                  </svg>
+                </a>
+              </li>
+            <% end %>
             <li>
               <% if I18n.locale == :sk %>
                 <%= locale_link t('navigation.english'), :en %>

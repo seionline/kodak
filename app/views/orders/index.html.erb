@@ -1,0 +1,21 @@
+<h1><%= t(@orders.model_name.i18n_key, count: @orders.count) %></h1>
+
+<p>
+  <%# TODO i18n %>
+  Note: Orders will be deleted automatically after they are fulfilled.
+</p>
+
+<table>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= link_to edit_order_path(order) do %>
+            <%# TODO i18n %>
+            Order from <%= l(order.updated_at) %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

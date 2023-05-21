@@ -45,11 +45,6 @@ en:
         success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
 
-  errors:
-    order_not_allowed: Sorry, something went wrong. Please, try to order again.
-    order_not_created: Sorry, something went wrong. Please, try to order again.
-    order_not_updated: Sorry, something went wrong. Please, try to order again.
-
   faqs:
     real_sizes:
       title: Real dimensions
@@ -117,12 +112,17 @@ en:
     cleaning: Cleaning sets for lenses, foils for displays, filters
     bags: Bags, cases, tripods, binoculars
     random: Photo papers, video cassettes, CD and DVD media and other recording media
-    presents: Various gift items, key rings...
-
-    success:
-      order_updated: Your order was updated.
+    presents: Various gift items, key rings...      
 
   orders:
     submit_save: Save order
     submit_place: Place order
     submit_destroy: Dismiss order
+
+    success:
+      order_updated: Your order was updated.
+  
+    errors:
+      order_not_allowed: Sorry, something went wrong. Please, try to order again.
+      order_not_created: Sorry, something went wrong. Please, try to order again.
+      order_not_updated: Sorry, something went wrong. Please, try to order again.

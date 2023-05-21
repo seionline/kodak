@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
+  def index
+    unless logged_in?
+      redirect_to root_path
+      return
+    end
+
+    @orders = current_user.orders
+  end
+
   def new
     if session[:order_id]
       redirect_to edit_order_path(session[:order_id])
@@ -26,7 +35,7 @@ class OrdersController < ApplicationController
       if allowed_order?(@order)
         render :edit
       else
-        flash[:error] = t('errors.order_not_allowed')
+        flash[:error] = t('orders.errors.order_not_allowed')
         redirect_to root_path
       end
     end
@@ -38,8 +47,9 @@ class OrdersController < ApplicationController
 
     if allowed_order?(@order)
       update_order
+      associate_order
     else
-      flash.now[:error] = t('errors.order_not_allowed')
+      flash.now[:error] = t('orders.errors.order_not_allowed')
       render :edit
     end
   end
@@ -59,11 +69,17 @@ class OrdersController < ApplicationController
         # TODO: actually place order?
       end
 
-      flash[:success] = t('success.order_updated')
+      flash[:success] = t('orders.success.order_updated')
       redirect_to root_path
     else
-      flash.now[:error] = t('errors.order_not_updated')
+      flash.now[:error] = t('orders.errors.order_not_updated')
       render :edit
     end
+  end
+
+  def associate_order
+    return unless logged_in?
+
+    @order.update(user: current_user)
   end
 end
