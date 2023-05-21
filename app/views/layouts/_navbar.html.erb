@@ -42,6 +42,9 @@
               <li>
                 <%= link_to ActiveModel::Naming.plural(Order), orders_path, class: 'nav-item' %>
               </li>
+              <li>
+                <%= button_to t('auth.sessions.destroy.submit'), log_out_path, method: 'delete' %>
+              </li>
             <% else %>
               <li>
                 <a  class='nav-item' href=<%= new_auth_session_path %>>

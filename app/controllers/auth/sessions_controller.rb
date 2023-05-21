@@ -9,6 +9,9 @@ module Auth
 
       if user&.authenticate(params[:auth_session][:password])
         session[:current_user_id] = user.id
+
+        # When logging in successfully, associate the order id in the session (if any) with the logged in user
+        UserOrderAssociationService.new(user, session[:order_id]).perform
         redirect_to :home
       else
         @error = true

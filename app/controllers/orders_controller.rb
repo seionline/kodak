@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
       return
     end
 
-    order = Order.new.tap { |o| o.save(validate: false) }
+    order = Order.new(status: Order::STATUS_NEW).tap { |o| o.save(validate: false) }
     session[:order_id] = order.id
     redirect_to edit_order_path(order)
   end
@@ -47,10 +47,12 @@ class OrdersController < ApplicationController
 
     if allowed_order?(@order)
       update_order
-      associate_order
+
+      # After saving, associate the order with the logged in user (if logged in)
+      UserOrderAssociationService.new(current_user, @order.id).perform
     else
       flash.now[:error] = t('orders.errors.order_not_allowed')
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -66,6 +68,7 @@ class OrdersController < ApplicationController
     service = OrderUpdateService.new(@order, params)
     if service.perform
       if params[:commit] == I18n.t('orders.submit_place')
+        
         # TODO: actually place order?
       end
 
@@ -73,13 +76,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       flash.now[:error] = t('orders.errors.order_not_updated')
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
-  end
-
-  def associate_order
-    return unless logged_in?
-
-    @order.update(user: current_user)
   end
 end

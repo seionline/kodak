@@ -3,7 +3,7 @@
 module Auth
   class EmailConfirmationsController < ApplicationController
     def new
-      @email_confirmation = User::EmailConfirmation.new(email_confirmation_params)
+      @email_confirmation = Auth::EmailConfirmation.new(email_confirmation_params)
     end
 
     def create

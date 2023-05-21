@@ -17,6 +17,10 @@ class Order < ApplicationRecord
   DELIVERY_METHOD_PICKUP = 'pickup'
   DELIVERY_METHOD_POST = 'post'
   DELIVERY_METHOD_OPTIONS = [DELIVERY_METHOD_PICKUP, DELIVERY_METHOD_POST].freeze
+  STATUS_NEW = 'new'
+  STATUS_PLACED = 'placed'
+  STATUS_CLOSED = 'closed'
+  STATUS = [STATUS_NEW, STATUS_PLACED, STATUS_CLOSED].freeze
 
   belongs_to :location, optional: true
   belongs_to :user, optional: true
@@ -31,6 +35,7 @@ class Order < ApplicationRecord
   validates :delivery_method, presence: true, inclusion: { in: DELIVERY_METHOD_OPTIONS }
   validates :payment_method, presence: true, inclusion: { in: PAYMENT_METHOD_OPTIONS }
   validates :location, presence: true, if: :pickup?
+  validates :status, inclusion: { in: STATUS }
 
   def self.build!(photos)
     transaction do

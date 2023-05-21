@@ -1,8 +1,4 @@
-<ul>
-  <% @order.errors.full_messages.each do |error_message| %>
-    <li><%= error_message %></li>
-  <% end %>
-</ul>
+<%= render 'errors', model: @order %>
 
 <% # TODO: I18n for the select options %>
 

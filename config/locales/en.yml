@@ -1,6 +1,9 @@
 en:
   title: Kodak Express Bratislava
 
+  errors:
+    message: "There were errors saving the %{model}:"
+
   activerecord:
     models:
       user:
@@ -30,20 +33,46 @@ en:
         reset_password: Reset password
         submit: Log in
         submit_disable_with: Logging in...
+        sign_up_html: Don't have an account yet? Create one %{href}.
+        sign_up_href: here
+      destroy:
+        submit: Log out
+
     email_confirmations:
+      new:
+        email_subject: Please confirm your email address
+        title: Confirm your email
+        submit: Confirm
       create:
         success_notice: Successfully confirmed your email address.
         failure_alert: Couldn't confirm your email address.
       resend:
         success_notice: Please click the confirmation link in the email you will receive momentarily.
         failure_alert: Couldn't send confirmation email. Please try again later.
+
     password_reset_requests:
+      new:
+        title: Reset your password
+        email_subject: Reset your password
+        submit: Reset
       create:
         success_notice: Please click the password reset link in the email you will receive momentarily.
+
     password_resets:
+      new:
+        title: Reset your password
+        submit: Reset
       create:
         success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
+
+    users:
+      new: 
+        submit: Sign up
+        submit_disable_with: Signing up...
+      create:
+        success_notice: Successfully signed up. Please click the confirmation link in the email you will receive momentarily.
+        failure_alert: Couldn't sign you up.
 
   faqs:
     real_sizes:

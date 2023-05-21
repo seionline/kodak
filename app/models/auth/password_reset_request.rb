@@ -4,6 +4,6 @@ module Auth
   class PasswordResetRequest
     include ActiveModel::Model
 
-    attr_accessor :email_or_username
+    attr_accessor :email
   end
 end

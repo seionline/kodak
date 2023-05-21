@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_22_100135) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_21_191604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "hstore"
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_22_100135) do
     t.text "special_requests"
     t.string "delivery_method"
     t.string "payment_method"
-    t.string "status"
+    t.string "status", default: "new", null: false
     t.boolean "paid", default: false, null: false
     t.integer "location_id"
     t.integer "user_id"
