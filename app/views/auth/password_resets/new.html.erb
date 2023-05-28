@@ -1,0 +1,19 @@
+<h1><%= t('auth.password_resets.new.title') %></h1>
+
+<%= render 'errors', model: @password_reset %>
+
+<%= form_for(@password_reset) do |f| %>
+  <%= f.hidden_field :password_reset_token %>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <%= f.submit t('auth.password_resets.new.submit') %>
+<% end %>

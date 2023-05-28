@@ -19,3 +19,7 @@
 
   <%= f.submit t('auth.sessions.new.submit'), disable_with: t('auth.sessions.new.submit_disable_with') %>
 <% end %>
+
+<p>
+  <%= t('auth.sessions.new.sign_up_html', href: link_to(t('auth.sessions.new.sign_up_href'), sign_up_path)) %>
+</p>

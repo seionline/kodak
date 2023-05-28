@@ -96,4 +96,7 @@ Rails.application.configure do
   # Needed because SassC::SyntaxError: Error: Function rgb is missing argument $green.
   # otherwise in production asset compilation, see also: https://github.com/tailwindlabs/tailwindcss/discussions/6738
   config.assets.css_compressor = nil
+
+  # TODO: replace this with actual domain for app
+  config.action_mailer.default_url_options = { host: 'prod.kodak.dev' }
 end

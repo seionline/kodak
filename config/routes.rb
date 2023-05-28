@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations, only: %i[index]
-  resources :orders, only: %i[new edit update destroy]
+  resources :orders, only: %i[new edit update destroy index]
   resources :photos, only: :destroy
 
   get 'log_in', to: redirect('/auth/session/new')

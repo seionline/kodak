@@ -1,0 +1,41 @@
+<h1>Sign up</h1>
+
+<%= render 'errors', model: @user %>
+
+<%# TODO I18n for user attributes %>
+
+<%# TODO More form fields? %>
+
+<%= form_for @user do |f| %>  
+  <p>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </p>
+
+  <p>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :email_confirmation %>
+    <%= f.text_field :email_confirmation %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <%= f.submit t('auth.users.new.submit'), disable_with: t('auth.users.new.submit_disable_with') %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= t('auth.email_confirmations.new.title') %></h1>
+
+<%= form_for(@email_confirmation) do |f| %>
+  <%= f.hidden_field :email_confirmation_token %>
+  <%= f.submit t('auth.email_confirmations.new.submit') %>
+<% end %>

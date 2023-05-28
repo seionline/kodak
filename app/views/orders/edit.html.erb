@@ -1,16 +1,6 @@
-<ul>
-  <% @order.errors.full_messages.each do |error_message| %>
-    <li><%= error_message %></li>
-  <% end %>
-</ul>
-
-<% # TODO: Show the uploaded pictures here, with possibility to delete or add more %>
+<%= render 'errors', model: @order %>
 
 <% # TODO: I18n for the select options %>
-
-<% # TODO: dismiss order button %>
-
-<% # TODO: show flashes %>
 
 <% @order.photos.each do |photo| %>
   <div>
@@ -63,7 +53,7 @@
     <%= f.select :payment_method, Order::PAYMENT_METHOD_OPTIONS %>
   </p>
   <%= f.submit t('orders.submit_save') %>
-  <%= f.submit t('orders.submit_place') %>
+  <%= f.submit t('orders.submit_place'), data: { 'turbo-confirm': t('orders.submit_place_confirmation') } %>
 <% end %>
 
 <%= button_to t('orders.submit_destroy'), order_path(@order), method: :delete %>

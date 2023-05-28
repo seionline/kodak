@@ -1,0 +1,12 @@
+<h1><%= t('auth.password_reset_requests.new.title') %></h1>
+
+<%= render 'errors', model: @password_reset_request %>
+
+<%= form_for(@password_reset_request) do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+
+  <%= f.submit t('auth.password_reset_requests.new.submit') %>
+<% end %>
