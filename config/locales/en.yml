@@ -1,157 +1,142 @@
+---
 en:
-  title: Kodak Express Bratislava
-
-  errors:
-    message: "There were errors saving the %{model}:"
-
   activerecord:
+    attributes:
+      location:
+        address: Address
+        email: Email
+        locations: Locations
+        opening_hours: Opening hours
+        phone: Phone
     models:
-      user:
-        one: User
-        other: Users
       location:
         one: Location
         other: Locations
       order:
         one: Order
         other: Orders
-
-    attributes:
-      location:
-        address: Address
-        email: Email
-        phone: Phone
-        locations: Locations
-        opening_hours: Opening hours
-
+      user:
+        one: User
+        other: Users
   auth:
-    sessions:
-      new:
-        title: Log in
-        error_message: "Couldn't log you in: Wrong email/password combination."
-        forgotten_password_message: Did you forget your password?
-        reset_password: Reset password
-        submit: Log in
-        submit_disable_with: Logging in...
-        sign_up_html: Don't have an account yet? Create one %{href}.
-        sign_up_href: here
-      destroy:
-        submit: Log out
-
     email_confirmations:
+      create:
+        failure_alert: Couldn't confirm your email address.
+        success_notice: Successfully confirmed your email address.
       new:
         email_subject: Please confirm your email address
-        title: Confirm your email
         submit: Confirm
-      create:
-        success_notice: Successfully confirmed your email address.
-        failure_alert: Couldn't confirm your email address.
+        title: Confirm your email
       resend:
-        success_notice: Please click the confirmation link in the email you will receive momentarily.
         failure_alert: Couldn't send confirmation email. Please try again later.
-
+        success_notice: Please click the confirmation link in the email you will receive momentarily.
     password_reset_requests:
-      new:
-        title: Reset your password
-        email_subject: Reset your password
-        submit: Reset
       create:
         success_notice: Please click the password reset link in the email you will receive momentarily.
-
-    password_resets:
       new:
-        title: Reset your password
+        email_subject: Reset your password
         submit: Reset
+        title: Reset your password
+    password_resets:
       create:
-        success_notice: Successfully changed your password.
         failure_alert: Couldn't update your password.
-
+        success_notice: Successfully changed your password.
+      new:
+        submit: Reset
+        title: Reset your password
+    sessions:
+      destroy:
+        submit: Log out
+      new:
+        error_message: 'Couldn''t log you in: Wrong email/password combination or unconfirmed email address.'
+        forgotten_password_message: Did you forget your password?
+        reset_password: Reset password
+        sign_up_href: here
+        sign_up_html: Don't have an account yet? Create one %{href}.
+        submit: Log in
+        submit_disable_with: Logging in...
+        title: Log in
     users:
-      new: 
+      create:
+        failure_alert: Couldn't sign you up.
+        success_notice: Successfully signed up. Please click the confirmation link in the email you will receive momentarily.
+      new:
         submit: Sign up
         submit_disable_with: Signing up...
-      create:
-        success_notice: Successfully signed up. Please click the confirmation link in the email you will receive momentarily.
-        failure_alert: Couldn't sign you up.
-
+  errors:
+    message: 'There were errors saving the %{model}:'
   faqs:
-    real_sizes:
-      title: Real dimensions
-      question: What are the real dimensions of the photographs?
-      answer: 'Actual photo dimensions depend on the width of the photo paper roll. Expressions 9x13, 10x15, 13x18, 15x21, etc. are just format names, not actual dimensions. The actual dimensions are shown in the table below:'
-      table_format_name: Name of the size
-      table_format_size: Real size
-    resolution:
-      title: Resolution
-      question: What is the minimal resolution needed for good quality photo?
-      answer: Quality photograph is a very subjective term. People's requirements are different, nevertheless it can be said that for a quality photo you need 300 dpi (300 dots per 1 inch - 2.54 cm).
-    prices:
-      title: Prices
-      question: Where is the price list of express photos printing?
-      answer: Express print - 10 minutes to approx. 1 hour (only in the case of a large number of express orders), is for the same prices as an online order within 2 hours.
     footer:
       email: email
       prompt_html: If you have any questions don't hesitate to send us an %{email_link}.
-
+    prices:
+      answer: Express print - 10 minutes to approx. 1 hour (only in the case of a large number of express orders), is for the same prices as an online order within 2 hours.
+      question: Where is the price list of express photos printing?
+      title: Prices
+    real_sizes:
+      answer: 'Actual photo dimensions depend on the width of the photo paper roll. Expressions 9x13, 10x15, 13x18, 15x21, etc. are just format names, not actual dimensions. The actual dimensions are shown in the table below:'
+      question: What are the real dimensions of the photographs?
+      table_format_name: Name of the size
+      table_format_size: Real size
+      title: Real dimensions
+    resolution:
+      answer: Quality photograph is a very subjective term. People's requirements are different, nevertheless it can be said that for a quality photo you need 300 dpi (300 dots per 1 inch - 2.54 cm).
+      question: What is the minimal resolution needed for good quality photo?
+      title: Resolution
   footer:
     credits: Made with ❤️ by
-
   index:
     online_order: Order online
     subtitle: Order from the comfort of your home. We will deliver order to your home!
     title: High quality KODAK photos produced by photo-chemical method
-    
   location:
     days: Monday - Sunday
     description_title: How to find us
-
   navigation:
     contact: Contact
     discounts: Discounts
     english: EN
     faq: FAQs
-    products: Products
     locations: Locations
     online_order: Online order
     pricelist: Price list
+    products: Products
     services: Services
     slovak: SK
     suggestions: Your suggestions
-
-  pricelist:
-    online_order: Photographs prices for online order
-    location_order: Photographs from a negative
-    scan: Scan - Digitalization
-    development: Negative development
-    presents: Presents
-    documents: Photographs for passports, visas and other documents
-    real_sizes: The exact physical dimensions of the photographs.
-    size: size
-    3days: 3 days
-    24hours: 24 hours
-    2hours: 2 hours
-    1hour: 1 hour
-
-  products:
-    films: Color and black and white photographic films and disposable cameras
-    cameras: Digital and classic cameras and photo accessories
-    cards: Memory cards and memory card readers, USB keys
-    batteries: Batteries, rechargeable batteries and chargers, button batteries
-    albums: Photo albums and photo frames, photo stickers and photo stickers
-    cleaning: Cleaning sets for lenses, foils for displays, filters
-    bags: Bags, cases, tripods, binoculars
-    random: Photo papers, video cassettes, CD and DVD media and other recording media
-    presents: Various gift items, key rings...      
-
   orders:
-    submit_save: Save order
-    submit_place: Place order
-    submit_destroy: Dismiss order
-
-    success:
-      order_updated: Your order was updated.
-  
     errors:
       order_not_allowed: Sorry, something went wrong. Please, try to order again.
       order_not_created: Sorry, something went wrong. Please, try to order again.
       order_not_updated: Sorry, something went wrong. Please, try to order again.
+      order_placed: Order was placed already. It cannot be modified.
+    submit_destroy: Dismiss order
+    submit_place: Place order
+    submit_place_confirmation: Do you really want to place this order? No changes to it can be made after.
+    submit_save: Save order
+    success:
+      order_updated: Your order was updated.
+  pricelist:
+    1hour: 1 hour
+    24hours: 24 hours
+    2hours: 2 hours
+    3days: 3 days
+    development: Negative development
+    documents: Photographs for passports, visas and other documents
+    location_order: Photographs from a negative
+    online_order: Photographs prices for online order
+    presents: Presents
+    real_sizes: The exact physical dimensions of the photographs.
+    scan: Scan - Digitalization
+    size: size
+  products:
+    albums: Photo albums and photo frames, photo stickers and photo stickers
+    bags: Bags, cases, tripods, binoculars
+    batteries: Batteries, rechargeable batteries and chargers, button batteries
+    cameras: Digital and classic cameras and photo accessories
+    cards: Memory cards and memory card readers, USB keys
+    cleaning: Cleaning sets for lenses, foils for displays, filters
+    films: Color and black and white photographic films and disposable cameras
+    presents: Various gift items, key rings...
+    random: Photo papers, video cassettes, CD and DVD media and other recording media
+  title: Kodak Express Bratislava

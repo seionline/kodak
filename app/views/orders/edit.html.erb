@@ -53,7 +53,7 @@
     <%= f.select :payment_method, Order::PAYMENT_METHOD_OPTIONS %>
   </p>
   <%= f.submit t('orders.submit_save') %>
-  <%= f.submit t('orders.submit_place') %>
+  <%= f.submit t('orders.submit_place'), data: { 'turbo-confirm': t('orders.submit_place_confirmation') } %>
 <% end %>
 
 <%= button_to t('orders.submit_destroy'), order_path(@order), method: :delete %>

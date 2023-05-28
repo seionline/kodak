@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     redirect_to edit_order_path(order)
   end
 
-  def edit # rubocop:disable Metrics/MethodLength
+  def edit
     @order = Order.find_by(id: params[:id])
 
     if @order.nil?
@@ -30,14 +30,7 @@ class OrdersController < ApplicationController
       session[:order_id] = nil
       redirect_to new_order_path
     else
-      @locations = Location.all
-
-      if allowed_order?(@order)
-        render :edit
-      else
-        flash[:error] = t('orders.errors.order_not_allowed')
-        redirect_to root_path
-      end
+      handle_edit_order_exists
     end
   end
 
@@ -49,7 +42,7 @@ class OrdersController < ApplicationController
       update_order
 
       # After saving, associate the order with the logged in user (if logged in)
-      UserOrderAssociationService.new(current_user, @order.id).perform
+      UserOrderAssociationService.new(current_user, @order.id, session).perform
     else
       flash.now[:error] = t('orders.errors.order_not_allowed')
       render :edit, status: :unprocessable_entity
@@ -67,16 +60,39 @@ class OrdersController < ApplicationController
   def update_order
     service = OrderUpdateService.new(@order, params)
     if service.perform
-      if params[:commit] == I18n.t('orders.submit_place')
-        
-        # TODO: actually place order?
-      end
-
-      flash[:success] = t('orders.success.order_updated')
-      redirect_to root_path
+      handle_update_success
     else
       flash.now[:error] = t('orders.errors.order_not_updated')
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def handle_update_success
+    flash[:success] = t('orders.success.order_updated')
+    if logged_in?
+      redirect_to orders_path
+    else
+      redirect_to root_path
+    end
+  end
+
+  def handle_edit_order_exists
+    @locations = Location.all
+
+    if allowed_order?(@order)
+      handle_edit_order_allowed
+    else
+      flash[:error] = t('orders.errors.order_not_allowed')
+      redirect_to root_path
+    end
+  end
+
+  def handle_edit_order_allowed
+    if @order.placed?
+      flash[:error] = t('orders.errors.order_placed')
+      redirect_to orders_path
+    else
+      render :edit
     end
   end
 end

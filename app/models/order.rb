@@ -60,4 +60,12 @@ class Order < ApplicationRecord
       DELIVERY_METHOD_POST
     end
   end
+
+  def new?
+    status == STATUS_NEW
+  end
+
+  def placed?
+    status == STATUS_PLACED
+  end
 end

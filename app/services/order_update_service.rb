@@ -24,6 +24,7 @@ class OrderUpdateService
     ActiveRecord::Base.transaction do
       add_delivery_method_and_location
       order.assign_attributes(order_params)
+      order.status = Order::STATUS_PLACED if order.new? && place_order?
       order.save
     end
   end
@@ -49,5 +50,9 @@ class OrderUpdateService
   def order_params
     params.require(:order).permit(:size, :surface, :conversion, :white_frame, :amount, :payment_method,
                                   :special_requests)
+  end
+
+  def place_order?
+    params[:commit] == I18n.t('orders.submit_place')
   end
 end

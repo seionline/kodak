@@ -5,18 +5,29 @@
   Note: Orders will be deleted automatically after they are fulfilled.
 </p>
 
-<table>
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td>
-          <%= link_to edit_order_path(order) do %>
-            <%# TODO i18n %>
-            Order from <%= l(order.updated_at) %>
-          <% end %>
-        </td>
-        <td><%= order.status %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if @orders.any? %>
+
+  <table>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td>
+            <%= link_to edit_order_path(order) do %>
+              <%# TODO i18n %>
+              Order from <%= l(order.updated_at) %>
+            <% end %>
+          </td>
+          <td><%= order.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  <p>
+    <%# TODO i18n %>
+    You don't have any orders.
+  </p>
+<% end %>
+
+<%= link_to "Create order", new_order_path %>
