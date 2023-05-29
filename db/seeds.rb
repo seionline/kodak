@@ -435,3 +435,5 @@ Product.create(
   },
   product_type: :photo_id
 )
+
+# Create oreders
