@@ -1,7 +1,6 @@
 ---
 sk:
   activerecord:
-
     attributes:
       location:
         address: Adresa
@@ -10,8 +9,8 @@ sk:
         email: Email
         opening_hours: Otváracie hodiny
       order:
-        user: Zákazník
         phone: Telefón
+        user: Zákazník
     models:
       location:
         few: Prevádzky
@@ -25,86 +24,6 @@ sk:
         few: Používatelia
         one: Používateľ
         other: Používatelia
-
-  errors:
-    order_not_allowed: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
-    order_not_created: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
-    order_not_updated: Niečo nevyšlo. Prosím, vytvorte objednávku ešte raz.
-
-  faqs:
-    real_sizes:
-      title: Skutočné rozmery
-      question: Aké sú skutočné rozmery fotografií?
-      answer: 'Skutočné rozmery fotografií závisia od šírky role fotopapiera. Výrazy 9x13, 10x15,13x18, 15x21 atď. sú len názvy formátov, nie skutočné rozmery. Skutočné rozmery sú uvedené v nasledujúcej tabuľke:'
-      table_format_name: Názov formátu
-      table_format_size: Skutočný rozmer
-    resolution:
-      title: Rozlíšenie
-      question: Aké minimálne rozlíšenie je treba, pre kvalitnú fotografiu?
-      answer: Kvalitná fotografia je veľmi subjektívny pojem. Nároky ľudí sú rôzne, napriek tomu sa dá povedať, že pre kvalitnú fotografiu je treba 300 dpi (300 bodov na 1 palec - 2,54 cm).
-    prices:
-      title: Ceny
-      question: Kde je cenník fotografií na počkanie?
-      answer: Fotografie na počkanie - 10 minút až cca 1 hodina (len v prípade veľkého počtu expresných zákaziek) robíme za rovnaké ceny ako Online objednávka do 2 hodín.
-    footer:
-      email: emailom
-      prompt_html: Ak máte otázky, neváhajte sa opýtať %{email_link}.
-
-  footer:
-    credits: Wed design & development
-
-  index:
-    online_order: Online objednávka
-    subtitle: Objednajte si z pohodlia Vášho domova. Objednávku pošleme k Vám domov!
-    title: Kvalitné fotografie KODAK vyrobené foto-chemickou cestou
-
-  location:
-    days: Pondelok - Nedeľa
-    description_title: Ako nás nájdete
-
-  navigation:
-    contact: Kontakt
-    discounts: Akcie a zľavy
-    english: EN
-    faq: Otázky a odpovede
-    products: Ponuka tovaru
-    locations: Prevádzky
-    online_order: Online objednávka
-    pricelist: Cenník
-    services: Služby
-    slovak: SK
-    suggestions: Vaše pripomienky
-
-  orders:
-    submit_save: Uložiť objednávku
-    submit_place: Objednať
-    submit_destroy: Zrušiť objednávku
-
-  products:
-    films: Farebné aj čiernobiele fotografické filmy a jednorazové fotoaparáty
-    cameras: Digitálne aj klasické fotoaparáty a fotopríslušenstvo
-    cards: Pamäťové karty a čítačky pamäťových kariet, USB kľúče
-    batteries: Batérie, nabíjacie batérie a nabíjačky, gombíkové batérie
-    albums: Fotoalbumy a rámiky na fotografie, fotorožky a fotopodlepky
-    cleaning: Čistiace sady na objektívy, fólie na displeje, filtre
-    bags: Brašne, púzdra, statívy, dalekohľady
-    random: Fotopapiere, videokazety, CD a DVD médiá a iné záznamové médiá
-    presents: Rôzne darčekové predmety, prívesky na kľúče...
-
-  pricelist:
-    online_order: Ceny fotografií pre online objednávku
-    location_order: Fotografie z filmu
-    scan: Skenovanie - Digitalizácia
-    development: Vyvolávanie filmov
-    presents: Darčekové predmety
-    documents: Fotografie na preukazy, víza a iné doklady
-    real_sizes: Presné fyzické rozmery fotografií.
-    size: rozmer
-    3days: 3 dni
-    24hours: 24 hodín
-    2hours: 2 hodiny
-    1hour: 1 hodina
-
   auth:
     email_confirmations:
       create:
@@ -171,6 +90,10 @@ sk:
     services: Služby
     slovak: SK
     suggestions: Vaše pripomienky
+  orders:
+    submit_destroy: Zrušiť objednávku
+    submit_place: Objednať
+    submit_save: Uložiť objednávku
   pricelist:
     1hour: 1 hodina
     24hours: 24 hodín

@@ -18,7 +18,6 @@ en:
       user:
         one: User
         other: Users
-
   auth:
     email_confirmations:
       create:
@@ -106,48 +105,9 @@ en:
     slovak: SK
     suggestions: Your suggestions
   orders:
-    errors:
-      order_not_allowed: Sorry, something went wrong. Please, try to order again.
-      order_not_created: Sorry, something went wrong. Please, try to order again.
-      order_not_updated: Sorry, something went wrong. Please, try to order again.
-      order_placed: Order was placed already. It cannot be modified.
-    submit_destroy: Dismiss order
-    submit_place: Place order
-    submit_place_confirmation: Do you really want to place this order? No changes to it can be made after.
-    submit_save: Save order
-
-  orders:
-    submit_save: Save order
-    submit_place: Place order
     submit_destroy: Delete order
-
-  pricelist:
-    online_order: Photographs prices for online order
-    location_order: Photographs from a negative
-    scan: Scan - Digitalization
-    development: Negative development
-    presents: Presents
-    documents: Photographs for passports, visas and other documents
-    real_sizes: The exact physical dimensions of the photographs.
-    size: size
-    3days: 3 days
-    24hours: 24 hours
-    2hours: 2 hours
-    1hour: 1 hour
-
-  products:
-    films: Color and black and white photographic films and disposable cameras
-    cameras: Digital and classic cameras and photo accessories
-    cards: Memory cards and memory card readers, USB keys
-    batteries: Batteries, rechargeable batteries and chargers, button batteries
-    albums: Photo albums and photo frames, photo stickers and photo stickers
-    cleaning: Cleaning sets for lenses, foils for displays, filters
-    bags: Bags, cases, tripods, binoculars
-    random: Photo papers, video cassettes, CD and DVD media and other recording media
-    presents: Various gift items, key rings...
-
-    success:
-      order_updated: Your order was updated.
+    submit_place: Place order
+    submit_save: Save order
   pricelist:
     1hour: 1 hour
     24hours: 24 hours
