@@ -9,6 +9,8 @@ sk:
         email: Email
         opening_hours: Otváracie hodiny
       order:
+        id: Číslo zákazky
+        location: Doručenie
         phone: Telefón
         user: Zákazník
     models:

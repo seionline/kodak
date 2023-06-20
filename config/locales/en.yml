@@ -8,6 +8,11 @@ en:
         locations: Locations
         opening_hours: Opening hours
         phone: Phone
+      order:
+        id: ID
+        location: Pick-up
+        phone: Phone
+        user: Customer
     models:
       location:
         one: Location
