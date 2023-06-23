@@ -437,3 +437,17 @@ Product.create(
 )
 
 # Create oreders
+12.times do
+  o = Order.new(
+    size: Order::SIZE_OPTIONS.sample,
+    surface: Order::SURFACE_OPTIONS.sample, 
+    special_requests: ['', 'This is a special request.', 'Another request.'].sample,
+    delivery_method: Order::DELIVERY_METHOD_OPTIONS.sample,
+    payment_method: Order::PAYMENT_METHOD_OPTIONS.sample,
+    status: Order::STATUS.sample
+  )
+
+  o.user = User.all[rand(User.count)]
+  o.location = Location.all[rand(2)]
+  o.save!
+end
