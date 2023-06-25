@@ -239,7 +239,8 @@ Product.create(
     sk: 'Magický hrnček'
   },
   description: {
-    en: 'TODO:',
+    en: 'The mug is normally dark, but when a hot liquid is poured into it (tea, cocoa, ...)
+      it fades and an image, photo, inscription appears.',
     sk: 'Hrnček je normálne tmavý, ale keď sa doň naleje horúca tekutina (čaj, kakao, ...)
        zbledne a objaví sa obrázok, fotografia, nápis.'
   },
@@ -284,7 +285,7 @@ Product.create(
 
 Product.create(
   name: {
-    en: 'TODO:',
+    en: 'Bib',
     sk: 'Podbradník'
   },
   description: {
@@ -349,7 +350,7 @@ Product.create(
 
 Product.create(
   name: {
-    en: 'Mouse TODO:',
+    en: 'Mouse pad',
     sk: 'Podložka pod myš'
   },
   description: {
@@ -362,7 +363,7 @@ Product.create(
 
 Product.create(
   name: {
-    en: 'TODO:',
+    en: 'Cup coaster',
     sk: 'Podložka pod pohár'
   },
   description: {
@@ -419,7 +420,12 @@ Product.create(
   },
   price: 8.5,
   description: {
-    en: 'TODO: translate when I will have internet',
+    en: 'Photos measuring 3x3.5 cm (civil card), 3.5x4.5 cm (passport). Photos with white, /
+      gray or other background as desired, any dimensions up to 10x15 cm, for visas, indexes or any /
+      other IDs - the price includes 4 photos for OP, PAS or 2 for visas, or 1 photo 9x13 or 10x15. /
+      Additional 4 photos for the ID card (2 for visas etc.) €3.50. Passport photos from the brought /
+      negative or digital photo €8.50 The price also includes a scan of the negative, if simple adjustments are needed /
+      digital data',
     sk: 'Fotografie rozmerov 3x3,5 cm (občiansky preukaz), 3,5x4,5 cm (pas). Fotografie s bielym, /
       sivým či iným pozadím podľa priania ľubovoľných rozmerov do 10x15 cm, na víza, indexy či akékoľvek /
       iné preukazy - cena zahŕňa 4 ks fotografií na OP, PAS alebo 2 ks na víza, či 1 ks 9x13 alebo 10x15. /
@@ -429,3 +435,20 @@ Product.create(
   },
   product_type: :photo_id
 )
+
+# Create orders
+12.times do
+  o = Order.new(
+    size: Order::SIZE_OPTIONS.sample,
+    amount: rand(1..23),
+    surface: Order::SURFACE_OPTIONS.sample,
+    special_requests: ['', 'This is a special request.', 'Another request.'].sample,
+    delivery_method: Order::DELIVERY_METHOD_OPTIONS.sample,
+    payment_method: Order::PAYMENT_METHOD_OPTIONS.sample,
+    status: Order::STATUS.sample
+  )
+
+  o.user = User.all[rand(User.count)]
+  o.location = Location.all[rand(2)]
+  o.save!
+end

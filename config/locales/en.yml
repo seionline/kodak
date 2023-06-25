@@ -4,10 +4,17 @@ en:
     attributes:
       location:
         address: Address
+        days: Monday - Friday
+        description: How to find us
         email: Email
         locations: Locations
         opening_hours: Opening hours
         phone: Phone
+      order:
+        id: ID
+        location: Pick-up
+        status: Status
+        user: Customer
     models:
       location:
         one: Location
@@ -105,17 +112,9 @@ en:
     slovak: SK
     suggestions: Your suggestions
   orders:
-    errors:
-      order_not_allowed: Sorry, something went wrong. Please, try to order again.
-      order_not_created: Sorry, something went wrong. Please, try to order again.
-      order_not_updated: Sorry, something went wrong. Please, try to order again.
-      order_placed: Order was placed already. It cannot be modified.
-    submit_destroy: Dismiss order
+    submit_destroy: Delete order
     submit_place: Place order
-    submit_place_confirmation: Do you really want to place this order? No changes to it can be made after.
     submit_save: Save order
-    success:
-      order_updated: Your order was updated.
   pricelist:
     1hour: 1 hour
     24hours: 24 hours

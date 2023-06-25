@@ -59,7 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_21_191604) do
   create_table "order_items", force: :cascade do |t|
     t.string "size"
     t.string "surface"
-    t.string "conversion"
     t.boolean "white_frame", default: false, null: false
     t.integer "amount"
     t.integer "order_id"
@@ -71,9 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_21_191604) do
   create_table "orders", force: :cascade do |t|
     t.string "size"
     t.string "surface"
-    t.string "conversion"
     t.boolean "white_frame", default: false, null: false
-    t.integer "amount", default: 1
+    t.integer "amount"
     t.text "special_requests"
     t.string "delivery_method"
     t.string "payment_method"

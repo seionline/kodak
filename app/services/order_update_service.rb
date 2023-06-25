@@ -48,7 +48,7 @@ class OrderUpdateService
   end
 
   def order_params
-    params.require(:order).permit(:size, :surface, :conversion, :white_frame, :amount, :payment_method,
+    params.require(:order).permit(:size, :surface, :white_frame, :amount, :payment_method,
                                   :special_requests)
   end
 

@@ -5,9 +5,8 @@ class CreateOrders < ActiveRecord::Migration[7.0]
     create_table :orders do |t|
       t.string :size
       t.string :surface
-      t.string :conversion
       t.boolean :white_frame, null: false, default: false
-      t.integer :amount
+      t.integer :amount, from: nil, to: 1
       t.text :special_requests
       t.string :delivery_method
       t.string :payment_method

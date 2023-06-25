@@ -12,7 +12,6 @@ class Order < ApplicationRecord
     '30cm x 45cm'
   ].freeze
   SURFACE_OPTIONS = %w[glossy matte].freeze
-  CONVERSION_OPTIONS = %w[fill_in fit_in].freeze
   PAYMENT_METHOD_OPTIONS = %w[advance pickup].freeze
   DELIVERY_METHOD_PICKUP = 'pickup'
   DELIVERY_METHOD_POST = 'post'
@@ -29,7 +28,6 @@ class Order < ApplicationRecord
 
   validates :size, presence: true, inclusion: { in: SIZE_OPTIONS }
   validates :surface, presence: true, inclusion: { in: SURFACE_OPTIONS }
-  validates :conversion, presence: true, inclusion: { in: CONVERSION_OPTIONS }
   validates :white_frame, inclusion: { in: [true, false] }
   validates :amount, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
   validates :delivery_method, presence: true, inclusion: { in: DELIVERY_METHOD_OPTIONS }

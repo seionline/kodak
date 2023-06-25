@@ -7,8 +7,14 @@ sk:
         days: Pondelok - Nedeľa
         description: Ako nás nájdete
         email: Email
+        locations: Prevádzky
         opening_hours: Otváracie hodiny
         phone: Telefón
+      order:
+        id: Číslo zákazky
+        location: Doručenie
+        status: Status
+        user: Zákazník
     models:
       location:
         few: Prevádzky
@@ -88,6 +94,10 @@ sk:
     services: Služby
     slovak: SK
     suggestions: Vaše pripomienky
+  orders:
+    submit_destroy: Zrušiť objednávku
+    submit_place: Objednať
+    submit_save: Uložiť objednávku
   pricelist:
     1hour: 1 hodina
     24hours: 24 hodín

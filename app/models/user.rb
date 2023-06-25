@@ -16,6 +16,14 @@ class User < ApplicationRecord
     [first_name, last_name].compact.join(' ')
   end
 
+  def admin?
+    role == 'admin'
+  end
+
+  def staff?
+    role == 'staff'
+  end
+
   def start_email_confirmation
     return unless update(email_confirmation_token: SecureRandom.alphanumeric(20))
 
