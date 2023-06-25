@@ -13,6 +13,7 @@ en:
       order:
         id: ID
         location: Pick-up
+        status: Status
         user: Customer
     models:
       location:

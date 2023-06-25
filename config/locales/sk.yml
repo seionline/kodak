@@ -13,6 +13,7 @@ sk:
       order:
         id: Číslo zákazky
         location: Doručenie
+        status: Status
         user: Zákazník
     models:
       location:
