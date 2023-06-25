@@ -441,7 +441,7 @@ Product.create(
   o = Order.new(
     size: Order::SIZE_OPTIONS.sample,
     amount: rand(1..23),
-    surface: Order::SURFACE_OPTIONS.sample, 
+    surface: Order::SURFACE_OPTIONS.sample,
     special_requests: ['', 'This is a special request.', 'Another request.'].sample,
     delivery_method: Order::DELIVERY_METHOD_OPTIONS.sample,
     payment_method: Order::PAYMENT_METHOD_OPTIONS.sample,

@@ -17,11 +17,11 @@ class User < ApplicationRecord
   end
 
   def admin?
-    role == "admin"
+    role == 'admin'
   end
 
   def staff?
-    role == "staff"
+    role == 'staff'
   end
 
   def start_email_confirmation
