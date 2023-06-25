@@ -4,6 +4,8 @@ en:
     attributes:
       location:
         address: Address
+        days: Monday - Friday
+        description: How to find us
         email: Email
         locations: Locations
         opening_hours: Opening hours
@@ -11,7 +13,6 @@ en:
       order:
         id: ID
         location: Pick-up
-        phone: Phone
         user: Customer
     models:
       location:

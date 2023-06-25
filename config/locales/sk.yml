@@ -7,11 +7,12 @@ sk:
         days: Pondelok - Nedeľa
         description: Ako nás nájdete
         email: Email
+        locations: Prevádzky
         opening_hours: Otváracie hodiny
+        phone: Telefón
       order:
         id: Číslo zákazky
         location: Doručenie
-        phone: Telefón
         user: Zákazník
     models:
       location:
