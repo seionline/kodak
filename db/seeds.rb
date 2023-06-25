@@ -436,7 +436,7 @@ Product.create(
   product_type: :photo_id
 )
 
-# Create oreders
+# Create orders
 12.times do
   o = Order.new(
     size: Order::SIZE_OPTIONS.sample,
