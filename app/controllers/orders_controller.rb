@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
       # After saving, associate the order with the logged in user (if logged in)
       UserOrderAssociationService.new(current_user, @order.id, session).perform
     else
-      flash.now[:error] = t('orders.errors.order_not_processed')
+      flash.now[:error] = t('errors.order_not_processed')
       render :edit, status: :unprocessable_entity
     end
   end

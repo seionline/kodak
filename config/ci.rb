@@ -2,6 +2,7 @@
 
 CI.run do
   step "Setup", "bin/setup --skip-server"
+  step "Tests", "bin/rspec"
 
   step "Style: Ruby", "bin/rubocop"
 
