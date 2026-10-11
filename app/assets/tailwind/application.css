@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@import url("https://unpkg.com/dropzone@6.0.0-beta.2/dist/dropzone.css");
+
+@theme {
+	--color-kodak-yellow: #fdba31;
+	--color-kodak-surface: #f5f5fa;
+	--color-kodak-red: #ee3226;
+	--color-kodak-red-hover: #b7271d;
+}
+
+@utility bg-primary {
+	background-color: var(--color-kodak-yellow);
+}
+
+@utility bg-secondary-color {
+	background-color: var(--color-kodak-surface);
+}
+
+@utility bg-red {
+	background-color: var(--color-kodak-red);
+}
+
+body,
+footer {
+	font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+	margin: 1em 0 0.2em;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+h2 {
+	margin: 1em 0 0.1em;
+	font-size: 1.2em;
+	text-decoration: underline var(--color-kodak-red) 2px;
+}
+
+a {
+	color: var(--color-kodak-red);
+}
+
+nav a {
+	color: black;
+}
+
+a:hover {
+	color: var(--color-kodak-red-hover);
+}
+
+nav a:hover {
+	color: var(--color-kodak-yellow);
+}
+
+.logo {
+	width: 200px;
+}
+
+.hero {
+	box-sizing: border-box;
+	display: flex;
+	min-height: 60vh;
+	height: auto;
+	padding: 1em;
+}
+
+.hero-homepage {
+	background-color: var(--color-kodak-yellow);
+	background-image: url("hero.jpg");
+	background-position: 70% 20%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bg-hero-title {
+	background-color: #fdb931c4;
+}
+
+.btn-primary {
+	display: inline-block;
+	margin-top: 2rem;
+	padding: 1rem;
+	color: #fff;
+	background-color: var(--color-kodak-red);
+	font-weight: bold;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: var(--color-kodak-red-hover);
+}
+
+.flash {
+	margin-left: 8px;
+	padding: 0 3px;
+}
+
+.alert {
+	border: 2px solid red;
+}
+
+.notice,
+.notice_with_url,
+.success {
+	border: 2px solid #00ca16;
+}
+
+table {
+	margin-top: 20px;
+	font-size: 0.9em;
+}
+
+.photo-prices th {
+	font-size: 1em;
+}
+
+.photo-prices td,
+.photo-prices th {
+	border-bottom: 1px solid gray;
+}
+
+.td-fixed-width {
+	width: 600px;
+}
+
+.top-line {
+	border-top: 1px solid gray;
+}
+
+tr:hover {
+	background-color: var(--color-kodak-yellow);
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+th,
+td {
+	padding: 15px;
+}
+
+@media (width >= 768px) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.8rem;
+	}
+
+	.hero {
+		padding: 1em 2em;
+	}
+}

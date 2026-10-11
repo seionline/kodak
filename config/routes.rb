@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get "up" => "rails/health#show", as: :rails_health_check
+
   root 'pages#index'
   get 'home', to: redirect('/')
   get 'faqs', to: 'pages#faqs'
