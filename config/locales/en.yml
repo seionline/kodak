@@ -72,6 +72,7 @@ en:
         submit_disable_with: Signing up...
   errors:
     message: 'There were errors saving the %{model}:'
+    order_not_processed: Something didn't work out. Please try again.
   faqs:
     footer:
       email: email
