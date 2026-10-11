@@ -15,6 +15,7 @@ gem "stimulus-rails"
 gem "tailwindcss-rails", "~> 2.0"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1"
+gem "solid_queue"
 gem "bootsnap", require: false
 gem "faker", "~> 3.1"
 gem "image_processing", "~> 1.2"
