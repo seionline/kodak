@@ -89,7 +89,7 @@ production:
     <<: *default
     database: kodak_production
     username: kodak
-    password: <%= ENV["MLTC_APP_DATABASE_PASSWORD"] %>
+    password: <%= Rails.application.credentials.dig(:kodak, :database_password) %>
   cache:
     <<: *primary_production
     database: kodak_production_cache
